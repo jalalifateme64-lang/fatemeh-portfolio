@@ -111,9 +111,9 @@ header{
   justify-content:space-between;
 }
 .logo{
-  font-family: var(--sans);
-  font-size: 17px;
-  font-weight: 700;
+  font-family: var(--serif);
+  font-size: 19px;
+  font-weight: 500;
   letter-spacing: -0.01em;
   text-decoration:none;
 }
@@ -214,8 +214,8 @@ nav a[aria-current="page"]{
 /* ---------- hero (home) ---------- */
 .hero{
   position: relative;
-  padding-top: clamp(52px, 9vw, 108px);
-  padding-bottom: clamp(48px, 8vw, 88px);
+  padding-top: clamp(56px, 8vw, 96px);
+  padding-bottom: clamp(56px, 8vw, 96px);
   display:grid;
   grid-template-columns: 1fr;
   gap: 28px;
@@ -231,8 +231,8 @@ nav a[aria-current="page"]{
   overflow: hidden;
   z-index: -1;
   pointer-events: none;
-  -webkit-mask-image: radial-gradient(ellipse at center, black 35%, transparent 75%);
-  mask-image: radial-gradient(ellipse at center, black 35%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 55%, transparent 92%);
+  mask-image: radial-gradient(ellipse at center, black 55%, transparent 92%);
 }
 .hero-decor::before, .hero-decor::after,
 .about-decor::before,
@@ -240,37 +240,37 @@ nav a[aria-current="page"]{
   content:'';
   position:absolute;
   border-radius:50%;
-  filter: blur(70px);
+  filter: blur(60px);
 }
 .hero-decor::before{
-  width: 320px; height: 320px;
+  width: 420px; height: 420px;
   background: var(--cs1-accent-soft);
-  top: 20px;
-  right: 8%;
+  top: 0;
+  right: 4%;
 }
 .hero-decor::after{
-  width: 280px; height: 280px;
-  background: var(--cs2-accent-soft);
-  bottom: -40px;
-  left: 20%;
-}
-.about-decor::before{
-  width: 300px; height: 300px;
+  width: 400px; height: 400px;
   background: var(--accent-soft);
-  top: 0;
+  top: 20px;
   left: -80px;
 }
+.about-decor::before{
+  width: 400px; height: 400px;
+  background: var(--accent-soft);
+  top: -20px;
+  left: -100px;
+}
 .contact-decor::before{
-  width: 300px; height: 300px;
+  width: 400px; height: 400px;
   background: var(--cs2-accent-soft);
-  top: -60px;
-  right: 10%;
+  top: -80px;
+  right: 6%;
 }
 .contact-decor::after{
-  width: 240px; height: 240px;
+  width: 320px; height: 320px;
   background: var(--cs1-accent-soft);
-  bottom: -20px;
-  left: 8%;
+  bottom: -40px;
+  left: 4%;
 }
 .eyebrow{
   font-family: var(--sans);
@@ -290,17 +290,16 @@ nav a[aria-current="page"]{
   border-radius: 50%;
   object-fit: cover;
   object-position: 50% 35%;
-  border: 3px solid var(--accent);
   box-shadow: var(--shadow);
   filter: saturate(0.92);
   flex-shrink:0;
 }
 .hero-name{
-  font-family: var(--sans);
-  font-weight: 700;
-  font-size: clamp(30px, 4vw, 46px);
-  line-height: 1.15;
-  letter-spacing: -0.02em;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(34px, 4.8vw, 56px);
+  line-height: 1.12;
+  letter-spacing: -0.015em;
   margin: 8px 0 0 0;
 }
 .hero-sub{
@@ -310,7 +309,7 @@ nav a[aria-current="page"]{
   max-width: 640px;
 }
 .hero-sub p{
-  font-size: 18px;
+  font-size: 19px;
   color: var(--ink-soft);
   margin: 0;
   max-width: 56ch;
@@ -432,7 +431,6 @@ nav a[aria-current="page"]{
   border-radius: 50%;
   object-fit: cover;
   object-position: 50% 35%;
-  border: 3px solid var(--accent);
   box-shadow: var(--shadow);
   filter: saturate(0.92);
   flex-shrink:0;
@@ -761,8 +759,8 @@ nav a[aria-current="page"]{
 /* ---------- contact ---------- */
 .contact{
   position: relative;
-  padding-top: clamp(64px, 9vw, 120px);
-  padding-bottom: clamp(64px, 9vw, 120px);
+  padding-top: clamp(56px, 8vw, 96px);
+  padding-bottom: clamp(56px, 8vw, 96px);
 }
 .contact-inner{
   display:flex;
