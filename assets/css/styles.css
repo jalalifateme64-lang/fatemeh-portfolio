@@ -13,8 +13,8 @@
   --ink: #16181C;
   --ink-soft: #55585F;
   --ink-faint: #9A9C98;
-  --accent: #1F8A5D;
-  --accent-soft: #DFF3EA;
+  --accent: #248C46;
+  --accent-soft: #E1F3E6;
   --line: #DCDAD1;
   --line-strong: #B9B6AA;
 
@@ -102,14 +102,13 @@ img{ max-width: 100%; display:block; }
 
 /* ---------- header ---------- */
 header{
-  padding-top: 28px;
-  padding-bottom: 20px;
+  padding-top: 18px;
+  padding-bottom: 14px;
 }
 .header-row{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding-bottom: 20px;
 }
 .logo{
   font-family: var(--serif);
@@ -117,14 +116,6 @@ header{
   font-weight: 500;
   letter-spacing: -0.01em;
   text-decoration:none;
-}
-.logo span{
-  font-family: var(--sans);
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--ink-faint);
-  display:block;
-  margin-top: 3px;
 }
 nav{
   display:flex;
@@ -229,17 +220,23 @@ nav a[aria-current="page"]{
   grid-template-columns: 1fr;
   gap: 28px;
 }
-/* Soft, blurred color washes so the hero doesn't read as an empty page —
-   pulls from the same palette as the case-study accents, low-key. */
-.hero-decor{
+/* Soft, blurred color washes so the page doesn't read as flat/empty —
+   pulls from the same palette as the case-study accents, low-key. Reused
+   on the hero, About, and Contact sections with different arrangements.
+   The mask fades each wash out well before the section's edge, so
+   nothing gets a hard, clipped-looking cutoff. */
+.hero-decor, .about-decor, .contact-decor{
   position:absolute;
   inset: 0;
   overflow: hidden;
   z-index: -1;
   pointer-events: none;
+  -webkit-mask-image: radial-gradient(ellipse at center, black 35%, transparent 75%);
+  mask-image: radial-gradient(ellipse at center, black 35%, transparent 75%);
 }
-.hero-decor::before,
-.hero-decor::after{
+.hero-decor::before, .hero-decor::after,
+.about-decor::before,
+.contact-decor::before, .contact-decor::after{
   content:'';
   position:absolute;
   border-radius:50%;
@@ -256,6 +253,24 @@ nav a[aria-current="page"]{
   background: var(--cs2-accent-soft);
   bottom: -40px;
   left: 20%;
+}
+.about-decor::before{
+  width: 300px; height: 300px;
+  background: var(--accent-soft);
+  top: 0;
+  left: -80px;
+}
+.contact-decor::before{
+  width: 300px; height: 300px;
+  background: var(--cs2-accent-soft);
+  top: -60px;
+  right: 10%;
+}
+.contact-decor::after{
+  width: 240px; height: 240px;
+  background: var(--cs1-accent-soft);
+  bottom: -20px;
+  left: 8%;
 }
 .eyebrow{
   font-family: var(--sans);
@@ -413,6 +428,7 @@ nav a[aria-current="page"]{
 .work-card:hover .arrow{ transform: translateX(4px); }
 
 /* ---------- about ---------- */
+#about{ position: relative; }
 .about-grid{
   display:grid;
   grid-template-columns: 1fr;
@@ -750,6 +766,7 @@ nav a[aria-current="page"]{
 
 /* ---------- contact ---------- */
 .contact{
+  position: relative;
   padding-top: clamp(64px, 9vw, 120px);
   padding-bottom: clamp(64px, 9vw, 120px);
 }
