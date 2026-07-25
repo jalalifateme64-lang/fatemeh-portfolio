@@ -13,8 +13,8 @@
   --ink: #16181C;
   --ink-soft: #55585F;
   --ink-faint: #9A9C98;
-  --accent: #0090D6;
-  --accent-soft: #D6EFFB;
+  --accent: #8868A8;
+  --accent-soft: #EDE6F5;
   --line: #DCDAD1;
   --line-strong: #B9B6AA;
 
@@ -223,16 +223,18 @@ nav a[aria-current="page"]{
 /* Soft, blurred color washes so the page doesn't read as flat/empty —
    pulls from the same palette as the case-study accents, low-key. Reused
    on the hero, About, and Contact sections with different arrangements.
-   The mask fades each wash out well before the section's edge, so
-   nothing gets a hard, clipped-looking cutoff. */
+   Each wash carries its own radial mask (fading to transparent well
+   before its own edge) rather than a mask on the whole container — a
+   container-level mask fades at a rate set by the container's own
+   aspect ratio, which on a short, wide section barely fades vertically
+   before overflow:hidden clips it, producing a hard cutoff. Masking
+   each blob individually fades it out on its own terms every time. */
 .hero-decor, .about-decor, .contact-decor{
   position:absolute;
   inset: 0;
   overflow: hidden;
   z-index: -1;
   pointer-events: none;
-  -webkit-mask-image: radial-gradient(ellipse at center, black 55%, transparent 92%);
-  mask-image: radial-gradient(ellipse at center, black 55%, transparent 92%);
 }
 .hero-decor::before, .hero-decor::after,
 .about-decor::before,
@@ -241,6 +243,8 @@ nav a[aria-current="page"]{
   position:absolute;
   border-radius:50%;
   filter: blur(60px);
+  -webkit-mask-image: radial-gradient(circle, black 0%, black 35%, transparent 70%);
+  mask-image: radial-gradient(circle, black 0%, black 35%, transparent 70%);
 }
 .hero-decor::before{
   width: 420px; height: 420px;
