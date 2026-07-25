@@ -428,6 +428,279 @@ nav a[aria-current="page"]{
 }
 .skills span:last-child{ border-right:none; }
 
+/* ==========================================================================
+   Case study components
+   Shared by case-study-1.html / case-study-2.html.
+   ========================================================================== */
+
+/* breadcrumb above the case hero */
+.back-link{
+  font-family: var(--mono);
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  gap: 8px;
+}
+.back-link:hover{ color: var(--accent); }
+.back-link .arrow{ display:inline-block; transform: scaleX(-1); }
+
+/* ---------- case hero ---------- */
+.case-hero{
+  padding-top: clamp(24px, 4vw, 40px);
+  padding-bottom: clamp(40px, 6vw, 64px);
+}
+.case-hero h1{
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(30px, 5vw, 50px);
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  margin: 14px 0 0 0;
+  max-width: 20ch;
+}
+.case-summary{
+  font-size: 17px;
+  color: var(--ink-soft);
+  max-width: 62ch;
+  margin: 20px 0 0 0;
+}
+.case-meta{
+  margin-top: clamp(32px, 5vw, 48px);
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 20px 32px;
+}
+.case-meta dt{
+  font-family: var(--mono);
+  font-size: 11.5px;
+  color: var(--ink-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 6px 0;
+}
+.case-meta dd{
+  margin: 0;
+  font-size: 15px;
+  color: var(--ink);
+}
+
+/* ---------- media frame (cover + inline images) ---------- */
+.frame{
+  width:100%;
+  background:
+    repeating-linear-gradient(135deg, var(--accent-soft), var(--accent-soft) 10px, #EFF3F0 10px, #EFF3F0 20px);
+  border: 1px solid var(--line);
+  position: relative;
+  overflow: hidden;
+}
+.frame::after{
+  content: attr(data-label);
+  position:absolute;
+  bottom: 14px; left:14px;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink-faint);
+  background: var(--bg-card);
+  padding: 4px 8px;
+  border: 1px solid var(--line);
+}
+.frame--cover{ aspect-ratio: 16/8; }
+.frame--wide{ aspect-ratio: 16/9; }
+.frame--square{ aspect-ratio: 4/3; }
+
+/* ---------- prose ---------- */
+.prose{ max-width: 68ch; }
+.prose p{
+  font-size: 16px;
+  color: var(--ink-soft);
+  margin: 0 0 18px 0;
+}
+.prose p:last-child{ margin-bottom:0; }
+.prose strong{ color: var(--ink); font-weight: 500; }
+.prose ul{
+  margin: 0 0 18px 0;
+  padding-left: 20px;
+  color: var(--ink-soft);
+}
+.prose li{ margin-bottom: 8px; }
+.prose li:last-child{ margin-bottom:0; }
+
+/* pull quote / callout, dropped inline in a section */
+.callout{
+  background: var(--accent-soft);
+  border-left: 2px solid var(--accent);
+  padding: 20px 24px;
+  margin: 28px 0;
+  max-width: 62ch;
+}
+.callout p{
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 19px;
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* ---------- process timeline (vertical axis motif) ---------- */
+.timeline{
+  list-style:none;
+  margin:0; padding:0;
+  border-left: 1px solid var(--line);
+}
+.timeline-step{
+  position: relative;
+  padding: 0 0 clamp(32px, 5vw, 48px) 32px;
+}
+.timeline-step:last-child{ padding-bottom:0; }
+.timeline-step::before{
+  content:'';
+  position:absolute;
+  left:-4px; top: 2px;
+  width: 7px; height: 7px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+.timeline-index{
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--accent);
+  display:block;
+  margin-bottom: 8px;
+}
+.timeline-step h3{
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 20px;
+  margin: 0 0 10px 0;
+}
+.timeline-step p{
+  color: var(--ink-soft);
+  font-size: 15px;
+  max-width: 60ch;
+  margin: 0;
+}
+
+/* ---------- decision cards ---------- */
+.decision-grid{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+  background: var(--line);
+}
+.decision-card{
+  background: var(--bg);
+  padding: clamp(24px, 3vw, 32px);
+}
+.decision-index{
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--accent);
+  display:block;
+  margin-bottom: 10px;
+}
+.decision-card h3{
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 21px;
+  margin: 0 0 12px 0;
+}
+.decision-card p{
+  color: var(--ink-soft);
+  font-size: 15px;
+  margin: 0 0 10px 0;
+}
+.decision-card p:last-child{ margin-bottom:0; }
+.decision-card .label{
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  display:block;
+  margin-bottom: 4px;
+}
+
+/* ---------- result comparison ---------- */
+.result-compare{
+  display:flex;
+  flex-wrap: wrap;
+  align-items:center;
+  gap: clamp(16px, 4vw, 32px);
+  margin: clamp(24px, 4vw, 40px) 0;
+}
+.result-stat{
+  display:flex;
+  flex-direction:column;
+  gap: 4px;
+}
+.result-stat b{
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(32px, 5vw, 48px);
+  line-height:1;
+  color: var(--ink);
+}
+.result-stat b.is-accent{ color: var(--accent); }
+.result-stat span{
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--ink-faint);
+}
+.result-arrow{
+  font-family: var(--serif);
+  font-size: 28px;
+  color: var(--line-strong);
+}
+.result-highlight{
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--ink);
+  background: var(--accent-soft);
+  display:inline-block;
+  width:fit-content;
+  padding: 8px 14px;
+  margin-top: clamp(20px, 3vw, 32px);
+}
+
+/* ---------- prev/next case nav ---------- */
+.case-switch{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+  background: var(--line);
+}
+.case-switch-link{
+  background: var(--bg);
+  padding: clamp(24px, 4vw, 40px);
+  text-decoration:none;
+  color: inherit;
+  display:flex;
+  flex-direction:column;
+  gap: 8px;
+}
+.case-switch-link:hover .case-switch-title{ color: var(--accent); }
+.case-switch-label{
+  font-family: var(--mono);
+  font-size: 11.5px;
+  color: var(--ink-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.case-switch-title{
+  font-family: var(--serif);
+  font-size: clamp(19px, 2.4vw, 24px);
+  font-weight: 500;
+}
+
+@media (min-width: 700px){
+  .case-meta{ grid-template-columns: repeat(4, minmax(0,1fr)); }
+  .case-switch{ grid-template-columns: 1fr 1fr; }
+  .case-switch-link:last-child{ align-items: flex-end; text-align: right; }
+}
+
 /* ---------- contact ---------- */
 .contact{
   padding-top: clamp(64px, 9vw, 120px);

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rebuilding a declining bundle feature — Fatemeh Jalali</title>
+<meta name="description" content="How a templating system recovered Volume Discount's creation rate from 12% to 27% and cut trial cancellations by 4%.">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Rebuilding a declining bundle feature through a scalable template system">
+<meta property="og:description" content="Volume Discount's creation rate had dropped from ~37% to ~12%. Research and a templating system brought it back to 27%.">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./assets/css/styles.css">
+<script src="./assets/js/main.js" defer></script>
+</head>
+<body>
+
+  <a class="skip-link" href="#top">Skip to content</a>
+
+  <header class="wrap">
+    <div class="header-row">
+      <a href="./index.html" class="logo">Fatemeh Jalali<span>Product Designer</span></a>
+      <nav aria-label="Primary">
+        <a href="./index.html#work">Work</a>
+        <a href="./index.html#about">About</a>
+        <a href="./index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <div class="axis-ticks"></div>
+  <div class="axis"></div>
+
+  <main id="top">
+
+    <section class="case-hero wrap">
+      <a href="./index.html#work" class="back-link reveal"><span class="arrow">→</span> Back to all work</a>
+
+      <div class="reveal">
+        <div class="eyebrow">Case study 02 · Bundling app</div>
+        <h1>Rebuilding a declining bundle feature through a scalable template system</h1>
+        <p class="case-summary">Volume Discount's creation rate had dropped from ~37% to ~12% over seven months. I led research across a merchant-journey audit, screen recordings, competitor benchmarking, and internal team input — then designed a templating system that solved both a UX problem and a technical one.</p>
+      </div>
+
+      <dl class="case-meta reveal">
+        <div>
+          <dt>Role</dt>
+          <dd>Lead product designer</dd>
+        </div>
+        <div>
+          <dt>Timeline</dt>
+          <dd>~7 months</dd>
+        </div>
+        <div>
+          <dt>Team</dt>
+          <dd>PM, 2 engineers, data analyst</dd>
+        </div>
+        <div>
+          <dt>Methods</dt>
+          <dd>Merchant research, benchmarking</dd>
+        </div>
+      </dl>
+    </section>
+
+    <div class="wrap">
+      <div class="frame frame--cover reveal" data-label="Volume Discount — before/after"></div>
+    </div>
+
+    <div class="axis-ticks"></div>
+    <div class="axis"></div>
+
+    <section class="section wrap">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-label">The problem</div>
+          <h2 class="section-title">A steady decline, with no obvious cause</h2>
+        </div>
+      </div>
+
+      <div class="prose reveal">
+        <p>Volume Discount is a bundling feature that lets merchants set up tiered, quantity-based discounts. Over seven months, its creation rate — the share of merchants who started setup and actually published a discount — fell from roughly <strong>37% to 12%</strong>. No single change explained the drop, which meant the problem was systemic rather than a broken step in the flow.</p>
+        <p>My job was to find out why merchants were dropping off, and whether the fix was a UX problem, a technical one, or both.</p>
+      </div>
+    </section>
+
+    <div class="axis-ticks"></div>
+    <div class="axis"></div>
+
+    <section class="section wrap">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-label">My role</div>
+          <h2 class="section-title">Owning research through delivery</h2>
+        </div>
+      </div>
+
+      <div class="prose reveal">
+        <p>I led the investigation end to end: framing the research questions, running the studies, and turning findings into a design a small engineering team could actually ship without breaking existing merchants' bundles.</p>
+        <ul>
+          <li>Designed and ran the merchant-journey audit and screen-recording review</li>
+          <li>Ran competitor benchmarking across comparable bundling apps</li>
+          <li>Synthesized findings with the PM and engineers into design requirements</li>
+          <li>Designed the templating system and validated it before rollout</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="axis-ticks"></div>
+    <div class="axis"></div>
+
+    <section class="section wrap">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-label">Process</div>
+          <h2 class="section-title">Four angles on the same drop-off</h2>
+        </div>
+        <div class="section-note">Triangulating research methods to separate the UX problem from the technical one</div>
+      </div>
+
+      <ol class="timeline reveal">
+        <li class="timeline-step">
+          <span class="timeline-index">01 — Merchant-journey audit</span>
+          <h3>Mapping every step from intent to publish</h3>
+          <p>Reconstructed the full creation flow, step by step, to find where merchants were most likely to abandon setup.</p>
+        </li>
+        <li class="timeline-step">
+          <span class="timeline-index">02 — Screen recordings</span>
+          <h3>Watching where people actually got stuck</h3>
+          <p>Reviewed recorded sessions of merchants attempting setup, which surfaced confusion around abstract bundle-type names that didn't map to merchants' mental models.</p>
+        </li>
+        <li class="timeline-step">
+          <span class="timeline-index">03 — Competitor benchmarking</span>
+          <h3>Checking how others frame the same decision</h3>
+          <p>Compared how competing bundling apps present discount types, to see whether the abstraction problem was specific to us or an industry-wide pattern worth solving differently.</p>
+        </li>
+        <li class="timeline-step">
+          <span class="timeline-index">04 — Internal team input</span>
+          <h3>Surfacing the technical constraint early</h3>
+          <p>Worked with engineering to understand backward-compatibility requirements for merchants already running live bundles — a constraint any redesign would have to respect.</p>
+        </li>
+      </ol>
+    </section>
+
+    <div class="axis-ticks"></div>
+    <div class="axis"></div>
+
+    <section class="section wrap">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-label">Key decisions</div>
+          <h2 class="section-title">Two problems, one system</h2>
+        </div>
+      </div>
+
+      <div class="decision-grid reveal">
+        <div class="decision-card">
+          <span class="decision-index">Decision 01</span>
+          <h3>Replace abstract bundle types with a template system</h3>
+          <span class="label">Challenge</span>
+          <p>Merchants couldn't tell what a bundle type would look like to their customers until after building it — the low visibility was driving drop-off.</p>
+          <span class="label">Decision</span>
+          <p>Designed a set of pre-built, visually previewed templates so merchants could recognize the right bundle type before committing to setup.</p>
+        </div>
+        <div class="decision-card">
+          <span class="decision-index">Decision 02</span>
+          <h3>Keep existing bundles compatible by default</h3>
+          <span class="label">Challenge</span>
+          <p>Any redesign risked breaking bundles merchants already had live in their stores.</p>
+          <span class="label">Decision</span>
+          <p>Mapped every existing configuration onto the new template system automatically, so no merchant needed to rebuild a bundle that already worked.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="axis-ticks"></div>
+    <div class="axis"></div>
+
+    <section class="section wrap">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-label">Result</div>
+          <h2 class="section-title">Creation rate recovered — and kept more trials</h2>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="result-compare">
+          <div class="result-stat">
+            <b>37%</b>
+            <span>Before the decline</span>
+          </div>
+          <div class="result-stat">
+            <b>12%</b>
+            <span>At its lowest point</span>
+          </div>
+          <span class="result-arrow">→</span>
+          <div class="result-stat">
+            <b class="is-accent">27%</b>
+            <span>After the template system shipped</span>
+          </div>
+        </div>
+
+        <div class="callout">
+          <p>"The redesign didn't just fix a UX problem — it removed a technical blocker that had been limiting the feature all along."</p>
+        </div>
+
+        <p class="result-highlight">Trial cancellation also dropped 4%, suggesting the fix reached beyond the immediate feature.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="axis-ticks"></div>
+  <div class="axis"></div>
+
+  <nav class="wrap" aria-label="More work">
+    <div class="case-switch reveal">
+      <a href="./case-study-1.html" class="case-switch-link">
+        <span class="case-switch-label">Previous</span>
+        <span class="case-switch-title">Improving bundle discovery through add-on features</span>
+      </a>
+      <a href="./index.html#work" class="case-switch-link">
+        <span class="case-switch-label">All work</span>
+        <span class="case-switch-title">Back to selected work</span>
+      </a>
+    </div>
+  </nav>
+
+  <div class="axis-ticks"></div>
+  <div class="axis"></div>
+
+  <section class="contact wrap" id="contact">
+    <div class="contact-inner reveal">
+      <h2>Let's <em>talk.</em></h2>
+      <div class="contact-links">
+        <a class="contact-link" href="mailto:jalalifateme64@gmail.com">jalalifateme64@gmail.com ↗</a>
+        <a class="contact-link" href="https://www.linkedin.com/in/fatemehjalali78/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 Fatemeh Jalali</span>
+    <span>Based in Tehran · Open to remote &amp; relocation</span>
+  </footer>
+
+</body>
+</html>
