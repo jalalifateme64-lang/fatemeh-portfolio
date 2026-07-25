@@ -291,6 +291,10 @@ nav a[aria-current="page"]{
 .work-card--cs1{ --card-accent: var(--cs1-accent); --card-accent-soft: var(--cs1-accent-soft); }
 .work-card--cs2{ --card-accent: var(--cs2-accent); --card-accent-soft: var(--cs2-accent-soft); }
 
+/* Alternate image/text sides so the list doesn't feel rigid. */
+.work-card--reverse .work-media{ order: 2; }
+.work-card--reverse .work-body{ order: 1; }
+
 .work-media{
   width:100%;
   aspect-ratio: 16/9;
@@ -787,6 +791,7 @@ a:focus-visible, .btn:focus-visible{
 @media (min-width: 760px){
   .hero{ grid-template-columns: 1.3fr 1fr; align-items: end; }
   .work-card{ grid-template-columns: 1.1fr 1fr; align-items:center; }
+  .work-card--reverse{ grid-template-columns: 1fr 1.1fr; }
   .about-grid{ grid-template-columns: 84px 1fr; }
   .contact-inner{ flex-direction: row; align-items:center; justify-content:space-between; width:100%; }
 }
