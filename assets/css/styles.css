@@ -226,12 +226,22 @@ nav a[aria-current="page"]{
   gap: 28px;
 }
 .eyebrow{
+  display:flex;
+  align-items:center;
+  gap: 10px;
   font-family: var(--sans);
   font-size: 13px;
   font-weight: 600;
   color: var(--accent);
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+.hero-avatar{
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 50% 35%;
+  flex-shrink:0;
 }
 .hero h1{
   font-family: var(--serif);
@@ -377,16 +387,12 @@ nav a[aria-current="page"]{
   grid-template-columns: 1fr;
   gap: 40px;
 }
-.about-mark{
-  width: 84px; height: 84px;
-  border: 1px solid var(--line-strong);
+.about-photo{
+  width: 96px; height: 96px;
   border-radius: 50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-family: var(--serif);
-  font-size: 26px;
-  color: var(--accent);
+  object-fit: cover;
+  object-position: 50% 35%;
+  box-shadow: var(--shadow);
   flex-shrink:0;
 }
 .about-text p{
@@ -792,7 +798,7 @@ a:focus-visible, .btn:focus-visible{
   .hero{ grid-template-columns: 1.3fr 1fr; align-items: end; }
   .work-card{ grid-template-columns: 1.1fr 1fr; align-items:center; }
   .work-card--reverse{ grid-template-columns: 1fr 1.1fr; }
-  .about-grid{ grid-template-columns: 84px 1fr; }
+  .about-grid{ grid-template-columns: 96px 1fr; }
   .contact-inner{ flex-direction: row; align-items:center; justify-content:space-between; width:100%; }
 }
 @media (max-width: 759px){
