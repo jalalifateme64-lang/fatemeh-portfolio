@@ -13,20 +13,24 @@
   --ink: #16181C;
   --ink-soft: #55585F;
   --ink-faint: #9A9C98;
-  --accent: #2F5D50;
-  --accent-soft: #E4EBE7;
+  --accent: #1F8A5D;
+  --accent-soft: #DFF3EA;
   --line: #DCDAD1;
   --line-strong: #B9B6AA;
 
   /* Per-case-study accents. Applied to that case's work-card media/link on
      the homepage, and as the page-wide --accent on the case's own page. */
-  --cs1-accent: #A9633A;      /* addon features — warm amber/terracotta */
-  --cs1-accent-soft: #F3E4D5;
-  --cs2-accent: #4F5D8C;      /* template system — dusty indigo */
-  --cs2-accent-soft: #E6E9F5;
+  --cs1-accent: #C1652B;      /* addon features — vivid warm amber */
+  --cs1-accent-soft: #F7E1CD;
+  --cs2-accent: #4453C4;      /* template system — vivid indigo */
+  --cs2-accent-soft: #E3E6FA;
 
   --serif: 'Fraunces', serif;
   --sans: 'Inter', sans-serif;
+
+  --radius: 16px;
+  --radius-sm: 10px;
+  --shadow: 0 8px 24px rgba(22, 24, 28, 0.07);
 
   --max: 1120px;
   --gutter: clamp(20px, 5vw, 64px);
@@ -148,17 +152,17 @@ nav a[aria-current="page"]{
   font-size: 14px;
   font-weight: 500;
   text-decoration:none;
-  padding: 12px 22px;
-  border-radius: 2px;
+  padding: 13px 24px;
+  border-radius: var(--radius-sm);
   display:inline-flex;
   align-items:center;
   gap: 8px;
 }
 .btn-primary{
-  background: var(--ink);
-  color: var(--bg);
+  background: var(--accent);
+  color: #FFFFFF;
 }
-.btn-primary:hover{ background: var(--accent); }
+.btn-primary:hover{ filter: brightness(0.92); }
 .btn-ghost{
   border: 1px solid var(--line-strong);
   color: var(--ink);
@@ -204,12 +208,12 @@ nav a[aria-current="page"]{
 /* ---------- tags ---------- */
 .tag{
   font-family: var(--sans);
-  font-size: 12px;
-  font-weight: 500;
+  font-size: 12.5px;
+  font-weight: 600;
   color: var(--ink-soft);
   background: var(--bg-card);
   border: 1px solid var(--line);
-  padding: 5px 11px;
+  padding: 6px 13px;
   border-radius: 20px;
 }
 
@@ -254,13 +258,6 @@ nav a[aria-current="page"]{
   margin: 0;
   max-width: 56ch;
 }
-.hero-facts{
-  font-family: var(--sans);
-  font-size: 14px;
-  color: var(--ink-faint);
-  margin: 4px 0 0 0;
-  max-width: 50ch;
-}
 .hero-cta{
   display:flex;
   gap: 14px;
@@ -272,17 +269,23 @@ nav a[aria-current="page"]{
 .work-list{
   display:flex;
   flex-direction: column;
-  gap: 1px;
-  background: var(--line);
+  gap: clamp(20px, 3vw, 28px);
 }
 .work-card{
-  background: var(--bg);
-  padding: clamp(28px, 4vw, 48px) 0;
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: clamp(20px, 3vw, 32px);
   display:grid;
   grid-template-columns: 1fr;
-  gap: 28px;
+  gap: 24px;
   text-decoration:none;
   color: inherit;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.work-card:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(22, 24, 28, 0.1);
 }
 /* Per-card accent, scoped so it doesn't leak past this card. */
 .work-card--cs1{ --card-accent: var(--cs1-accent); --card-accent-soft: var(--cs1-accent-soft); }
@@ -292,7 +295,7 @@ nav a[aria-current="page"]{
   width:100%;
   aspect-ratio: 16/9;
   background: var(--card-accent-soft, var(--accent-soft));
-  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
   position: relative;
   overflow: hidden;
   display:flex;
@@ -303,9 +306,9 @@ nav a[aria-current="page"]{
   content: attr(data-index);
   font-family: var(--serif);
   font-size: clamp(40px, 6vw, 64px);
-  font-weight: 400;
+  font-weight: 500;
   color: var(--card-accent, var(--accent));
-  opacity: 0.35;
+  opacity: 0.55;
 }
 .work-body{
   display:flex;
@@ -330,13 +333,13 @@ nav a[aria-current="page"]{
 .work-result{
   font-family: var(--sans);
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--ink);
-  background: var(--accent-soft);
+  background: var(--card-accent-soft, var(--accent-soft));
   display:inline-block;
   width:fit-content;
-  padding: 6px 12px;
-  border-radius: 3px;
+  padding: 7px 13px;
+  border-radius: var(--radius-sm);
 }
 .work-desc{
   color: var(--ink-soft);
@@ -475,7 +478,8 @@ nav a[aria-current="page"]{
 .frame{
   width:100%;
   background: var(--accent-soft);
-  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
   position: relative;
   overflow: hidden;
 }
@@ -575,11 +579,12 @@ nav a[aria-current="page"]{
 .decision-grid{
   display:grid;
   grid-template-columns: 1fr;
-  gap: 1px;
-  background: var(--line);
+  gap: clamp(16px, 2.5vw, 24px);
 }
 .decision-card{
-  background: var(--bg);
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
   padding: clamp(24px, 3vw, 32px);
 }
 .decision-index{
@@ -653,8 +658,8 @@ nav a[aria-current="page"]{
   background: var(--accent-soft);
   display:inline-block;
   width:fit-content;
-  padding: 10px 16px;
-  border-radius: 3px;
+  padding: 11px 18px;
+  border-radius: var(--radius-sm);
   margin-top: clamp(20px, 3vw, 32px);
 }
 
@@ -662,17 +667,23 @@ nav a[aria-current="page"]{
 .case-switch{
   display:grid;
   grid-template-columns: 1fr;
-  gap: 1px;
-  background: var(--line);
+  gap: clamp(16px, 2.5vw, 24px);
 }
 .case-switch-link{
-  background: var(--bg);
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
   padding: clamp(24px, 4vw, 40px);
   text-decoration:none;
   color: inherit;
   display:flex;
   flex-direction:column;
   gap: 8px;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.case-switch-link:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(22, 24, 28, 0.1);
 }
 .case-switch-link:hover .case-switch-title{ color: var(--accent); }
 .case-switch-label{
@@ -726,6 +737,7 @@ nav a[aria-current="page"]{
   font-weight: 500;
   text-decoration:none;
   border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm);
   padding: 12px 18px;
   display:inline-flex;
   align-items:center;
