@@ -31,31 +31,5 @@
     els.forEach(function (el) { io.observe(el); });
   }
 
-  /* ---------- axis tick marks (data-axis signature) ---------- */
-  var TICK_SPACING = 90;
-
-  function drawTicks() {
-    document.querySelectorAll('.axis-ticks').forEach(function (track) {
-      track.textContent = ''; // redraw from scratch so resizing can't stack ticks
-      var count = Math.floor(track.offsetWidth / TICK_SPACING);
-      for (var i = 0; i <= count; i++) {
-        var tick = document.createElement('span');
-        tick.style.left = (i * TICK_SPACING) + 'px';
-        track.appendChild(tick);
-      }
-    });
-  }
-
-  function setupTicks() {
-    drawTicks();
-
-    var frame = null;
-    window.addEventListener('resize', function () {
-      if (frame) cancelAnimationFrame(frame);
-      frame = requestAnimationFrame(drawTicks);
-    });
-  }
-
   setupReveal();
-  setupTicks();
 })();

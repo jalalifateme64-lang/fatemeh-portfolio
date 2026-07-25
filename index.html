@@ -15,7 +15,7 @@
 <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./assets/css/styles.css">
 <script src="./assets/js/main.js" defer></script>
 </head>
@@ -33,8 +33,7 @@
       </nav>
     </div>
   </header>
-  <div class="axis-ticks"></div>
-  <div class="axis"></div>
+  <div class="wrap"><hr class="divider"></div>
 
   <main id="top">
 
@@ -45,20 +44,13 @@
       </div>
       <div class="hero-sub reveal">
         <p>I'm a product designer with six years of experience, and the core of how I work hasn't changed much in that time: start with the data, understand what users actually need, and let that shape the decisions rather than my own assumptions. I've applied that approach mostly in e-commerce, including hands-on experience with Shopify.</p>
-        <div class="hero-meta">
-          <div class="stat"><b>6+</b> yrs experience</div>
-          <div class="stat"><b>18%</b> feature adoption lift</div>
-          <div class="stat"><b>27%</b> creation-rate recovery</div>
-        </div>
+        <p class="hero-facts">Six years of experience across e-commerce and Shopify — including an 18% lift in feature adoption and a 27% recovery in creation rate.</p>
         <div class="hero-cta">
           <a href="#work" class="btn btn-primary">View selected work</a>
           <a href="#contact" class="btn btn-ghost">Get in touch</a>
         </div>
       </div>
     </section>
-
-    <div class="axis-ticks"></div>
-    <div class="axis"></div>
 
     <section class="section wrap" id="work">
       <div class="section-head reveal">
@@ -70,8 +62,8 @@
       </div>
 
       <div class="work-list">
-        <a href="./case-study-1.html" class="work-card reveal">
-          <div class="work-media" data-label="Case study 01"></div>
+        <a href="./case-study-1.html" class="work-card work-card--cs1 reveal">
+          <div class="work-media" data-index="01"></div>
           <div class="work-body">
             <div class="work-index">01 — Bundling app</div>
             <h3 class="work-title">Improving bundle discovery through add-on features</h3>
@@ -86,8 +78,8 @@
           </div>
         </a>
 
-        <a href="./case-study-2.html" class="work-card reveal">
-          <div class="work-media" data-label="Case study 02"></div>
+        <a href="./case-study-2.html" class="work-card work-card--cs2 reveal">
+          <div class="work-media" data-index="02"></div>
           <div class="work-body">
             <div class="work-index">02 — Bundling app</div>
             <h3 class="work-title">Rebuilding a declining bundle feature through a scalable template system</h3>
@@ -103,9 +95,6 @@
         </a>
       </div>
     </section>
-
-    <div class="axis-ticks"></div>
-    <div class="axis"></div>
 
     <section class="section wrap" id="about">
       <div class="section-head reveal">
@@ -132,9 +121,6 @@
     </section>
 
   </main>
-
-  <div class="axis-ticks"></div>
-  <div class="axis"></div>
 
   <section class="contact wrap" id="contact">
     <div class="contact-inner reveal">

@@ -4,8 +4,10 @@
   Not part of the deployed site — copy it to the project root, rename it,
   and replace everything marked TODO.
 
-  The header, footer and axis dividers below are the shared chrome: keep them
-  identical on every page so the site reads as one thing.
+  The header and footer below are the shared chrome: keep them identical
+  on every page so the site reads as one thing. Section separation is
+  mostly whitespace — reach for `.divider` only where a page genuinely
+  needs a visual break.
 -->
 <html lang="en">
 <head>
@@ -22,7 +24,7 @@
 <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./assets/css/styles.css">
 <script src="./assets/js/main.js" defer></script>
 </head>
@@ -41,8 +43,7 @@
       </nav>
     </div>
   </header>
-  <div class="axis-ticks"></div>
-  <div class="axis"></div>
+  <div class="wrap"><hr class="divider"></div>
 
   <main id="top">
 
@@ -55,13 +56,12 @@
       </div>
 
       <!-- TODO page content. Add `class="reveal"` to blocks that should
-           fade in on scroll; use `.axis-ticks` + `.axis` between sections. -->
+           fade in on scroll. Let whitespace separate sections; drop in
+           `<div class="wrap"><hr class="divider"></div>` only if a
+           section genuinely needs a harder break. -->
     </section>
 
   </main>
-
-  <div class="axis-ticks"></div>
-  <div class="axis"></div>
 
   <section class="contact wrap" id="contact">
     <div class="contact-inner reveal">
