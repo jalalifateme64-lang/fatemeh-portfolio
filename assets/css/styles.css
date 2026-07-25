@@ -13,8 +13,8 @@
   --ink: #16181C;
   --ink-soft: #55585F;
   --ink-faint: #9A9C98;
-  --accent: #1E82B5;
-  --accent-soft: #DCEEF6;
+  --accent: #0090D6;
+  --accent-soft: #D6EFFB;
   --line: #DCDAD1;
   --line-strong: #B9B6AA;
 
@@ -111,9 +111,9 @@ header{
   justify-content:space-between;
 }
 .logo{
-  font-family: var(--serif);
-  font-size: 19px;
-  font-weight: 500;
+  font-family: var(--sans);
+  font-size: 17px;
+  font-weight: 700;
   letter-spacing: -0.01em;
   text-decoration:none;
 }
@@ -290,7 +290,8 @@ nav a[aria-current="page"]{
   border-radius: 50%;
   object-fit: cover;
   object-position: 50% 35%;
-  box-shadow: 0 0 0 4px var(--bg), 0 0 0 6px var(--accent), var(--shadow);
+  border: 3px solid var(--accent);
+  box-shadow: var(--shadow);
   filter: saturate(0.92);
   flex-shrink:0;
 }
@@ -375,14 +376,6 @@ nav a[aria-current="page"]{
   flex-direction: column;
   gap: 14px;
 }
-.work-index{
-  font-family: var(--sans);
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-}
 .work-title{
   font-family: var(--serif);
   font-size: clamp(22px, 3vw, 30px);
@@ -439,7 +432,8 @@ nav a[aria-current="page"]{
   border-radius: 50%;
   object-fit: cover;
   object-position: 50% 35%;
-  box-shadow: 0 0 0 4px var(--bg), 0 0 0 6px var(--accent), var(--shadow);
+  border: 3px solid var(--accent);
+  box-shadow: var(--shadow);
   filter: saturate(0.92);
   flex-shrink:0;
 }
