@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" fill="#F7F7F3"/>
+  <!-- axis motif: the site's signature divider, scaled down to a mark -->
+  <rect x="8" y="46" width="48" height="2" fill="#B9B6AA"/>
+  <rect x="8" y="40" width="2" height="8" fill="#B9B6AA"/>
+  <rect x="54" y="40" width="2" height="8" fill="#B9B6AA"/>
+  <text x="32" y="34" font-family="Georgia, 'Times New Roman', serif" font-size="30"
+        fill="#2F5D50" text-anchor="middle">FJ</text>
+</svg>
