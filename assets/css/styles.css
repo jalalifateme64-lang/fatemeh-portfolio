@@ -224,66 +224,31 @@ nav a[aria-current="page"]{
   grid-template-columns: 1fr;
   gap: 28px;
 }
-/* Soft, blurred color washes so the page doesn't read as flat/empty —
-   pulls from the same palette as the case-study accents, low-key. Reused
-   on the hero, About, and Contact sections with different arrangements.
-   The fade-to-transparent is baked directly into each blob's own
-   radial-gradient background, rather than achieved with a separate
-   blur+mask combination — blur and mask are composited in a browser-
-   defined order and can let a sliver of color bleed past where the
-   mask should have zeroed it out, which is what caused the hard,
-   clipped-looking edges before. A gradient that ends on `transparent`
-   has no such edge to bleed past. */
-.hero-decor, .about-decor, .contact-decor{
+/* Soft, blurred color wash — kept only behind About in this variant.
+   The hero and Contact/footer areas are intentionally plain: this is a
+   design editorial, not a SaaS landing page, and the blob shapes behind
+   those two sections read too much like the latter. The fade-to-
+   transparent is baked directly into the blob's own radial-gradient
+   background (ending on `transparent`), with `closest-side` sizing so
+   the 100% reference point is the box's own nearest edge — a
+   `transparent` stop comfortably under 100% is guaranteed to reach zero
+   opacity before the box's actual boundary in every direction, corners
+   included. */
+.about-decor{
   position:absolute;
   inset: 0;
   overflow: hidden;
   z-index: -1;
   pointer-events: none;
 }
-.hero-decor::before, .hero-decor::after,
-.about-decor::before,
-.contact-decor::before, .contact-decor::after{
+.about-decor::before{
   content:'';
   position:absolute;
   border-radius:50%;
-}
-/* `closest-side` makes the gradient's 100% reference point the box's own
-   nearest edge (its edge-midpoint), not the farther corner — so a
-   `transparent` stop comfortably under 100% is guaranteed to reach zero
-   opacity before the box's actual boundary in every direction, corners
-   included. The previous version measured against the corner distance,
-   so at the flat edges — where a rectangular overflow:hidden actually
-   clips — opacity was still barely above zero. */
-.hero-decor::before{
-  width: 560px; height: 560px;
-  background: radial-gradient(circle closest-side, var(--cs1-accent-soft) 0%, var(--cs1-accent-soft) 20%, transparent 80%);
-  top: 0;
-  right: 4%;
-}
-.hero-decor::after{
-  width: 540px; height: 540px;
-  background: radial-gradient(circle closest-side, var(--accent-soft) 0%, var(--accent-soft) 20%, transparent 80%);
-  top: 20px;
-  left: -60px;
-}
-.about-decor::before{
   width: 540px; height: 540px;
   background: radial-gradient(circle closest-side, var(--accent-soft) 0%, var(--accent-soft) 20%, transparent 80%);
   top: -20px;
   left: -80px;
-}
-.contact-decor::before{
-  width: 540px; height: 540px;
-  background: radial-gradient(circle closest-side, var(--cs2-accent-soft) 0%, var(--cs2-accent-soft) 20%, transparent 80%);
-  top: -60px;
-  right: 6%;
-}
-.contact-decor::after{
-  width: 440px; height: 440px;
-  background: radial-gradient(circle closest-side, var(--cs1-accent-soft) 0%, var(--cs1-accent-soft) 20%, transparent 80%);
-  bottom: -20px;
-  left: 4%;
 }
 .eyebrow{
   font-family: var(--sans);
