@@ -25,12 +25,16 @@
   --cs2-accent: #4453C4;      /* template system — vivid indigo */
   --cs2-accent-soft: #E3E6FA;
 
-  /* Single font family site-wide: Inter reads clean and reliable at
-     every weight/size, with no unusual letterforms to trip on. --serif
-     is kept as an alias (rather than rewriting every heading rule) so
-     existing styles that reference it still resolve correctly. */
+  /* Inter everywhere by default — clean and reliable at every weight/
+     size, with no unusual letterforms to trip on. --serif is kept as
+     an alias (rather than rewriting every heading rule) so existing
+     styles that reference it still resolve correctly. --display-serif
+     is the one deliberate exception: Fraunces, used only for
+     .section-title, to give major section headings stronger contrast
+     against the Inter body text. */
   --serif: 'Inter', sans-serif;
   --sans: 'Inter', sans-serif;
+  --display-serif: 'Fraunces', serif;
 
   --radius: 16px;
   --radius-sm: 10px;
@@ -166,8 +170,8 @@ nav a[aria-current="page"]{
 
 /* ---------- section heads ---------- */
 .section{
-  padding-top: clamp(56px, 8vw, 96px);
-  padding-bottom: clamp(56px, 8vw, 96px);
+  padding-top: clamp(84px, 12vw, 144px);
+  padding-bottom: clamp(84px, 12vw, 144px);
 }
 .section-head{
   display:flex;
@@ -186,10 +190,11 @@ nav a[aria-current="page"]{
   text-transform: uppercase;
 }
 .section-title{
-  font-family: var(--serif);
-  font-size: clamp(24px, 3vw, 32px);
+  font-family: var(--display-serif);
+  font-size: clamp(32px, 4.4vw, 48px);
   font-weight: 400;
-  margin: 6px 0 0 0;
+  letter-spacing: -0.01em;
+  margin: 8px 0 0 0;
 }
 .section-note{
   font-family: var(--sans);
@@ -218,8 +223,8 @@ nav a[aria-current="page"]{
 /* ---------- hero (home) ---------- */
 .hero{
   position: relative;
-  padding-top: clamp(56px, 8vw, 96px);
-  padding-bottom: clamp(56px, 8vw, 96px);
+  padding-top: clamp(84px, 12vw, 144px);
+  padding-bottom: clamp(84px, 12vw, 144px);
   display:grid;
   grid-template-columns: 1fr;
   gap: 28px;
@@ -710,8 +715,8 @@ nav a[aria-current="page"]{
 /* ---------- contact ---------- */
 .contact{
   position: relative;
-  padding-top: clamp(56px, 8vw, 96px);
-  padding-bottom: clamp(56px, 8vw, 96px);
+  padding-top: clamp(84px, 12vw, 144px);
+  padding-bottom: clamp(84px, 12vw, 144px);
 }
 .contact-inner{
   display:flex;
