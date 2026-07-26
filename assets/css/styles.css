@@ -138,12 +138,25 @@ nav a{
   position:relative;
   padding-bottom: 2px;
 }
+nav a::after{
+  content:'';
+  position:absolute;
+  left:0; bottom:0;
+  width:100%;
+  height:1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform .25s ease;
+}
 nav a:hover{ color: var(--ink); }
+nav a:hover::after{ transform: scaleX(1); transform-origin: left; }
 /* Current page in a multi-page nav. */
 nav a[aria-current="page"]{
   color: var(--ink);
   border-bottom: 1px solid var(--accent);
 }
+nav a[aria-current="page"]::after{ content:none; }
 
 /* ---------- buttons ---------- */
 .btn{
@@ -296,8 +309,8 @@ nav a[aria-current="page"]{
   color: inherit;
   transition: transform .2s ease, box-shadow .2s ease;
 }
-.work-card:hover{
-  transform: translateY(-3px);
+a.work-card:hover{
+  transform: translateY(-3px) scale(1.01);
   box-shadow: 0 14px 32px rgba(22, 24, 28, 0.1);
 }
 /* Per-card accent, scoped so it doesn't leak past this card. */
@@ -373,6 +386,19 @@ nav a[aria-current="page"]{
   margin-top: 6px;
 }
 .work-card:hover .work-link{ color: var(--card-accent, var(--accent)); }
+.work-link-text{ position:relative; }
+.work-link-text::after{
+  content:'';
+  position:absolute;
+  left:0; bottom:-2px;
+  width:100%;
+  height:1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform .25s ease;
+}
+.work-card:hover .work-link-text::after{ transform: scaleX(1); transform-origin: left; }
 .work-link .arrow{ transition: transform .2s ease; }
 .work-card:hover .arrow{ transform: translateX(4px); }
 
