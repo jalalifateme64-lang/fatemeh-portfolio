@@ -25,7 +25,11 @@
   --cs2-accent: #4453C4;      /* template system — vivid indigo */
   --cs2-accent-soft: #E3E6FA;
 
-  --serif: 'Fraunces', serif;
+  /* Single font family site-wide: Inter reads clean and reliable at
+     every weight/size, with no unusual letterforms to trip on. --serif
+     is kept as an alias (rather than rewriting every heading rule) so
+     existing styles that reference it still resolve correctly. */
+  --serif: 'Inter', sans-serif;
   --sans: 'Inter', sans-serif;
 
   --radius: 16px;
@@ -223,12 +227,13 @@ nav a[aria-current="page"]{
 /* Soft, blurred color washes so the page doesn't read as flat/empty —
    pulls from the same palette as the case-study accents, low-key. Reused
    on the hero, About, and Contact sections with different arrangements.
-   Each wash carries its own radial mask (fading to transparent well
-   before its own edge) rather than a mask on the whole container — a
-   container-level mask fades at a rate set by the container's own
-   aspect ratio, which on a short, wide section barely fades vertically
-   before overflow:hidden clips it, producing a hard cutoff. Masking
-   each blob individually fades it out on its own terms every time. */
+   The fade-to-transparent is baked directly into each blob's own
+   radial-gradient background, rather than achieved with a separate
+   blur+mask combination — blur and mask are composited in a browser-
+   defined order and can let a sliver of color bleed past where the
+   mask should have zeroed it out, which is what caused the hard,
+   clipped-looking edges before. A gradient that ends on `transparent`
+   has no such edge to bleed past. */
 .hero-decor, .about-decor, .contact-decor{
   position:absolute;
   inset: 0;
@@ -242,38 +247,35 @@ nav a[aria-current="page"]{
   content:'';
   position:absolute;
   border-radius:50%;
-  filter: blur(60px);
-  -webkit-mask-image: radial-gradient(circle, black 0%, black 35%, transparent 70%);
-  mask-image: radial-gradient(circle, black 0%, black 35%, transparent 70%);
 }
 .hero-decor::before{
-  width: 420px; height: 420px;
-  background: var(--cs1-accent-soft);
+  width: 460px; height: 460px;
+  background: radial-gradient(circle, var(--cs1-accent-soft) 0%, var(--cs1-accent-soft) 35%, transparent 70%);
   top: 0;
   right: 4%;
 }
 .hero-decor::after{
-  width: 400px; height: 400px;
-  background: var(--accent-soft);
+  width: 440px; height: 440px;
+  background: radial-gradient(circle, var(--accent-soft) 0%, var(--accent-soft) 35%, transparent 70%);
   top: 20px;
-  left: -80px;
+  left: -60px;
 }
 .about-decor::before{
-  width: 400px; height: 400px;
-  background: var(--accent-soft);
+  width: 440px; height: 440px;
+  background: radial-gradient(circle, var(--accent-soft) 0%, var(--accent-soft) 35%, transparent 70%);
   top: -20px;
-  left: -100px;
+  left: -80px;
 }
 .contact-decor::before{
-  width: 400px; height: 400px;
-  background: var(--cs2-accent-soft);
-  top: -80px;
+  width: 440px; height: 440px;
+  background: radial-gradient(circle, var(--cs2-accent-soft) 0%, var(--cs2-accent-soft) 35%, transparent 70%);
+  top: -60px;
   right: 6%;
 }
 .contact-decor::after{
-  width: 320px; height: 320px;
-  background: var(--cs1-accent-soft);
-  bottom: -40px;
+  width: 360px; height: 360px;
+  background: radial-gradient(circle, var(--cs1-accent-soft) 0%, var(--cs1-accent-soft) 35%, transparent 70%);
+  bottom: -20px;
   left: 4%;
 }
 .eyebrow{
