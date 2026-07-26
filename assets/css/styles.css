@@ -301,7 +301,7 @@ nav a[aria-current="page"]::after{ content:none; }
   background: var(--bg-card);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  padding: clamp(20px, 3vw, 32px);
+  padding: clamp(20px, 3vw, 24px);
   display:grid;
   grid-template-columns: 1fr;
   gap: 24px;
@@ -819,8 +819,9 @@ a:focus-visible, .btn:focus-visible{
 /* ---------- responsive ---------- */
 @media (min-width: 760px){
   .hero{ grid-template-columns: 1.3fr 1fr; align-items: center; }
-  .work-card{ grid-template-columns: 1.1fr 1fr; align-items:center; }
+  .work-card{ grid-template-columns: 1.1fr 1fr; align-items:stretch; }
   .work-card--reverse{ grid-template-columns: 1fr 1.1fr; }
+  .work-media{ aspect-ratio: auto; height: 100%; }
   .about-grid{ grid-template-columns: 96px 1fr; }
   .contact-inner{ flex-direction: row; align-items:center; justify-content:space-between; width:100%; }
 }
