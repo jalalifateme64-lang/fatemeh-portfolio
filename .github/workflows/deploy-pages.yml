@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [claude/portfolio-website-review-m4bro3]
+    branches: [claude/portfolio-editorial-plain-bg]
   workflow_dispatch:
 
 permissions:
