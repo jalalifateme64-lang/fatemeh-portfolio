@@ -295,7 +295,7 @@ nav a[aria-current="page"]::after{ content:none; }
 .work-list{
   display:flex;
   flex-direction: column;
-  gap: clamp(20px, 3vw, 28px);
+  gap: clamp(32px, 5vw, 48px);
 }
 .work-card{
   background: var(--bg-card);
@@ -308,6 +308,7 @@ nav a[aria-current="page"]::after{ content:none; }
   text-decoration:none;
   color: inherit;
   transition: transform .2s ease, box-shadow .2s ease;
+  container-type: inline-size;
 }
 a.work-card:hover{
   transform: translateY(-3px) scale(1.01);
@@ -324,6 +325,7 @@ a.work-card:hover{
 .work-media{
   width:100%;
   aspect-ratio: 3/2;
+  container-type: inline-size;
   background: var(--card-accent-soft, var(--accent-soft));
   border-radius: var(--radius-sm);
   position: relative;
@@ -831,8 +833,15 @@ a:focus-visible, .btn:focus-visible{
 /* ---------- responsive ---------- */
 @media (min-width: 760px){
   .hero{ grid-template-columns: 1.3fr 1fr; align-items: center; }
-  .work-card{ grid-template-columns: 1.1fr 1fr; align-items:center; }
+  .work-card{ grid-template-columns: 1.1fr 1fr; align-items:stretch; }
   .work-card--reverse{ grid-template-columns: 1fr 1.1fr; }
+  /* Stretch to the row height when there's room, but never crop past a
+     3:2 ratio. cqw is relative to .work-card's own inline size (the
+     query container), so these percentages back out the media column's
+     share of that width (1.1fr or 1fr of 2.1fr, minus padding/gap)
+     scaled by 2/3 for the ratio cap. */
+  .work-media{ aspect-ratio: auto; height: 100%; max-height: calc(34.921cqw - 8.381px); }
+  .work-card--reverse .work-media{ max-height: calc(31.746cqw - 7.619px); }
   .about-grid{ grid-template-columns: 96px 1fr; }
   .contact-inner{ flex-direction: row; align-items:center; justify-content:space-between; width:100%; }
 }
