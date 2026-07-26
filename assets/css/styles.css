@@ -217,37 +217,6 @@ nav a[aria-current="page"]::after{ content:none; }
   fill: none;
 }
 
-/* Small marker/highlight scribbled behind a specific word or number,
-   e.g. the percentages in a work-result badge. Self-contained (its own
-   ::before), so it can wrap any inline text without touching layout. */
-.mark{
-  position: relative;
-  z-index: 0;
-  display: inline-block;
-}
-.mark::before{
-  content: '';
-  position: absolute;
-  left: -3px;
-  right: -3px;
-  top: 8%;
-  bottom: 4%;
-  background: color-mix(in srgb, var(--card-accent, var(--accent)) 38%, transparent);
-  border-radius: 40% 60% 45% 55% / 60% 45% 65% 40%;
-  transform: rotate(-1.5deg);
-  z-index: -1;
-}
-
-/* Decorative connector filling the gap between the hero and the next
-   section, so it doesn't read as dead space. */
-.section-connector{
-  display: flex;
-  justify-content: center;
-  color: var(--accent);
-  opacity: 0.45;
-}
-.section-connector svg path{ fill: none; }
-
 /* Small corner doodles near section heads / whitespace-heavy areas.
    Absolutely positioned against a `position:relative` ancestor, and
    hidden below the point where they'd risk overlapping content. */
@@ -257,6 +226,12 @@ nav a[aria-current="page"]::after{ content:none; }
 }
 @media (max-width: 900px){
   .doodle--corner{ display:none; }
+}
+.doodle--contact{
+  color: var(--accent);
+  opacity: 0.6;
+  vertical-align: middle;
+  margin-left: 2px;
 }
 .section-title{
   font-family: var(--display-serif);
@@ -293,7 +268,7 @@ nav a[aria-current="page"]::after{ content:none; }
 .hero{
   position: relative;
   padding-top: clamp(84px, 12vw, 144px);
-  padding-bottom: clamp(84px, 12vw, 144px);
+  padding-bottom: clamp(28px, 4vw, 48px);
   display:grid;
   grid-template-columns: 1fr;
   gap: 28px;
@@ -468,16 +443,6 @@ a.work-card:hover{
 .about-grid{
   display:grid;
   grid-template-columns: 1fr;
-  gap: 40px;
-}
-.about-photo{
-  width: 96px; height: 96px;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: 50% 35%;
-  box-shadow: var(--shadow);
-  filter: saturate(0.92);
-  flex-shrink:0;
 }
 .about-text p{
   font-size: 17px;
@@ -907,7 +872,6 @@ a:focus-visible, .btn:focus-visible{
      space is just the box's own background (matching the photo's baked-in
      background), not a crop artifact. */
   .work-media{ aspect-ratio: auto; height: 100%; }
-  .about-grid{ grid-template-columns: 96px 1fr; }
   .contact-inner{ flex-direction: row; align-items:center; justify-content:space-between; width:100%; }
 }
 @media (max-width: 759px){
