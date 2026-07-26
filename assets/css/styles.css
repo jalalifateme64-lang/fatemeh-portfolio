@@ -217,16 +217,6 @@ nav a[aria-current="page"]::after{ content:none; }
   fill: none;
 }
 
-/* Small corner doodles near section heads / whitespace-heavy areas.
-   Absolutely positioned against a `position:relative` ancestor, and
-   hidden below the point where they'd risk overlapping content. */
-.doodle--corner{
-  position: absolute;
-  pointer-events: none;
-}
-@media (max-width: 900px){
-  .doodle--corner{ display:none; }
-}
 .doodle--contact{
   color: var(--accent);
   opacity: 0.6;
@@ -287,10 +277,9 @@ nav a[aria-current="page"]::after{ content:none; }
   gap: 20px;
 }
 .hero-photo{
-  width: 100px; height: 100px;
+  width: 140px; height: 140px;
   border-radius: 50%;
   object-fit: cover;
-  object-position: 50% 35%;
   box-shadow: var(--shadow);
   filter: saturate(0.92);
   flex-shrink:0;
@@ -457,7 +446,6 @@ a.work-card:hover{
 }
 
 .skills{
-  position: relative;
   margin-top: 32px;
   display:flex;
   flex-wrap: wrap;
@@ -465,17 +453,6 @@ a.work-card:hover{
   font-family: var(--sans);
   font-size: 14px;
   font-weight: 500;
-}
-.skills .doodle--corner{
-  top: -22px;
-  right: 2px;
-  color: var(--cs1-accent);
-}
-#about .section-head{ position: relative; }
-#about .section-head .doodle--corner{
-  top: 2px;
-  right: 4px;
-  color: var(--cs2-accent);
 }
 .skills span{
   color: var(--ink-soft);
