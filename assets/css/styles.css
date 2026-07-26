@@ -224,32 +224,6 @@ nav a[aria-current="page"]{
   grid-template-columns: 1fr;
   gap: 28px;
 }
-/* Soft, blurred color wash — kept only behind About in this variant.
-   The hero and Contact/footer areas are intentionally plain: this is a
-   design editorial, not a SaaS landing page, and the blob shapes behind
-   those two sections read too much like the latter. The fade-to-
-   transparent is baked directly into the blob's own radial-gradient
-   background (ending on `transparent`), with `closest-side` sizing so
-   the 100% reference point is the box's own nearest edge — a
-   `transparent` stop comfortably under 100% is guaranteed to reach zero
-   opacity before the box's actual boundary in every direction, corners
-   included. */
-.about-decor{
-  position:absolute;
-  inset: 0;
-  overflow: hidden;
-  z-index: -1;
-  pointer-events: none;
-}
-.about-decor::before{
-  content:'';
-  position:absolute;
-  border-radius:50%;
-  width: 540px; height: 540px;
-  background: radial-gradient(circle closest-side, var(--accent-soft) 0%, var(--accent-soft) 20%, transparent 80%);
-  top: -20px;
-  left: -80px;
-}
 .eyebrow{
   font-family: var(--sans);
   font-size: 13px;
@@ -398,7 +372,6 @@ nav a[aria-current="page"]{
 .work-card:hover .arrow{ transform: translateX(4px); }
 
 /* ---------- about ---------- */
-#about{ position: relative; }
 .about-grid{
   display:grid;
   grid-template-columns: 1fr;
