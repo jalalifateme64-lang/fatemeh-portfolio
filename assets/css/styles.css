@@ -332,6 +332,12 @@ a.work-card:hover{
   align-items:center;
   justify-content:center;
 }
+.work-media img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  display:block;
+}
 .work-media::after{
   content: attr(data-index);
   font-family: var(--serif);
@@ -527,7 +533,13 @@ a.work-card:hover{
   color: var(--accent);
   opacity: 0.75;
 }
-.frame--cover{ aspect-ratio: 16/8; }
+.frame img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  display:block;
+}
+.frame--cover{ aspect-ratio: 3/2; }
 .frame--wide{ aspect-ratio: 16/9; }
 .frame--square{ aspect-ratio: 4/3; }
 
