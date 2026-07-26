@@ -248,33 +248,40 @@ nav a[aria-current="page"]{
   position:absolute;
   border-radius:50%;
 }
+/* `closest-side` makes the gradient's 100% reference point the box's own
+   nearest edge (its edge-midpoint), not the farther corner — so a
+   `transparent` stop comfortably under 100% is guaranteed to reach zero
+   opacity before the box's actual boundary in every direction, corners
+   included. The previous version measured against the corner distance,
+   so at the flat edges — where a rectangular overflow:hidden actually
+   clips — opacity was still barely above zero. */
 .hero-decor::before{
-  width: 460px; height: 460px;
-  background: radial-gradient(circle, var(--cs1-accent-soft) 0%, var(--cs1-accent-soft) 35%, transparent 70%);
+  width: 560px; height: 560px;
+  background: radial-gradient(circle closest-side, var(--cs1-accent-soft) 0%, var(--cs1-accent-soft) 20%, transparent 80%);
   top: 0;
   right: 4%;
 }
 .hero-decor::after{
-  width: 440px; height: 440px;
-  background: radial-gradient(circle, var(--accent-soft) 0%, var(--accent-soft) 35%, transparent 70%);
+  width: 540px; height: 540px;
+  background: radial-gradient(circle closest-side, var(--accent-soft) 0%, var(--accent-soft) 20%, transparent 80%);
   top: 20px;
   left: -60px;
 }
 .about-decor::before{
-  width: 440px; height: 440px;
-  background: radial-gradient(circle, var(--accent-soft) 0%, var(--accent-soft) 35%, transparent 70%);
+  width: 540px; height: 540px;
+  background: radial-gradient(circle closest-side, var(--accent-soft) 0%, var(--accent-soft) 20%, transparent 80%);
   top: -20px;
   left: -80px;
 }
 .contact-decor::before{
-  width: 440px; height: 440px;
-  background: radial-gradient(circle, var(--cs2-accent-soft) 0%, var(--cs2-accent-soft) 35%, transparent 70%);
+  width: 540px; height: 540px;
+  background: radial-gradient(circle closest-side, var(--cs2-accent-soft) 0%, var(--cs2-accent-soft) 20%, transparent 80%);
   top: -60px;
   right: 6%;
 }
 .contact-decor::after{
-  width: 360px; height: 360px;
-  background: radial-gradient(circle, var(--cs1-accent-soft) 0%, var(--cs1-accent-soft) 35%, transparent 70%);
+  width: 440px; height: 440px;
+  background: radial-gradient(circle closest-side, var(--cs1-accent-soft) 0%, var(--cs1-accent-soft) 20%, transparent 80%);
   bottom: -20px;
   left: 4%;
 }
