@@ -201,27 +201,6 @@ nav a[aria-current="page"]::after{ content:none; }
   color: var(--ink-faint);
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
-
-/* ---------- hand-drawn accents ---------- */
-.doodle{
-  color: var(--accent);
-  flex-shrink: 0;
-  display: inline-block;
-  overflow: visible;
-}
-.doodle path{
-  fill: none;
-}
-
-.doodle--contact{
-  color: var(--accent);
-  opacity: 0.6;
-  vertical-align: middle;
-  margin-left: 2px;
 }
 .section-title{
   font-family: var(--display-serif);
