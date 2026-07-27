@@ -436,7 +436,6 @@ a.work-card:hover{
 .about-text p{
   font-size: 17px;
   color: var(--ink-soft);
-  max-width: 62ch;
   margin: 0 0 18px 0;
 }
 .about-text p:last-child{ margin-bottom:0; }
