@@ -249,6 +249,18 @@ nav a[aria-current="page"]::after{ content:none; }
   color: var(--accent);
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  position: relative;
+  padding-bottom: 10px;
+}
+.eyebrow::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 32px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--accent);
 }
 .hero-identity{
   display:flex;
@@ -317,6 +329,18 @@ nav a[aria-current="page"]::after{ content:none; }
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-bottom: 18px;
+  position: relative;
+  padding-top: 16px;
+}
+.work-kicker::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 48px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--card-accent, var(--accent));
 }
 
 .work-media{
@@ -326,6 +350,7 @@ nav a[aria-current="page"]::after{ content:none; }
   background: var(--card-accent-soft, var(--accent-soft));
   border-radius: var(--radius);
   box-shadow: var(--shadow);
+  padding: clamp(14px, 2.5vw, 28px);
   position: relative;
   overflow: hidden;
 }
@@ -428,18 +453,17 @@ nav a[aria-current="page"]::after{ content:none; }
   margin-top: 32px;
   display:flex;
   flex-wrap: wrap;
-  gap: 0;
+  gap: 10px;
   font-family: var(--sans);
   font-size: 14px;
   font-weight: 500;
 }
 .skills span{
-  color: var(--ink-soft);
-  padding: 0 16px 0 0;
-  margin-right: 16px;
-  border-right: 1px solid var(--line);
+  color: var(--ink);
+  background: var(--accent-soft);
+  padding: 7px 14px;
+  border-radius: 20px;
 }
-.skills span:last-child{ border-right:none; }
 
 /* ==========================================================================
    Case study components
