@@ -799,15 +799,68 @@ footer{
 /* ---------- reveal ---------- */
 .reveal{
   opacity: 0;
-  transform: translateY(14px);
-  transition: opacity .6s ease, transform .6s ease;
+  transform: translateY(24px);
+  transition: opacity .5s ease, transform .5s ease;
 }
 .reveal.in{
   opacity: 1;
   transform: translateY(0);
 }
+/* A touch of stagger between two sibling .reveal blocks in the same
+   section (e.g. hero photo before hero copy, About head before body)
+   without needing a separate observer per element. */
+.hero-sub.reveal,
+.about-grid.reveal{
+  transition-delay: .1s;
+}
+
+/* Staggered reveal within each work entry: image scales in first,
+   then title/badge/description/tags/link fade up in sequence. Driven
+   by the single .work-entry.in toggle (same IntersectionObserver
+   entry as every other .reveal), so it only ever plays once. */
+.work-entry .work-media,
+.work-entry .work-title,
+.work-entry .work-result,
+.work-entry .work-desc,
+.work-entry .work-tags,
+.work-entry .work-link{
+  opacity: 0;
+  transition: opacity .5s ease, transform .5s ease;
+}
+.work-entry .work-media{ transform: scale(0.96); }
+.work-entry .work-title,
+.work-entry .work-result,
+.work-entry .work-desc,
+.work-entry .work-tags,
+.work-entry .work-link{
+  transform: translateY(22px);
+}
+.work-entry .work-title{ transition-delay: .1s; }
+.work-entry .work-result{ transition-delay: .2s; }
+.work-entry .work-desc{ transition-delay: .3s; }
+.work-entry .work-tags{ transition-delay: .4s; }
+.work-entry .work-link{ transition-delay: .5s; }
+
+.work-entry.in .work-media,
+.work-entry.in .work-title,
+.work-entry.in .work-result,
+.work-entry.in .work-desc,
+.work-entry.in .work-tags,
+.work-entry.in .work-link{
+  opacity: 1;
+  transform: none;
+}
+
 @media (prefers-reduced-motion: reduce){
   .reveal{ opacity:1; transform:none; transition:none; }
+  .work-entry .work-media,
+  .work-entry .work-title,
+  .work-entry .work-result,
+  .work-entry .work-desc,
+  .work-entry .work-tags,
+  .work-entry .work-link{
+    opacity:1; transform:none; transition:none;
+  }
   html{ scroll-behavior:auto; }
 }
 
