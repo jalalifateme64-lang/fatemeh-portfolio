@@ -183,8 +183,8 @@ nav a[aria-current="page"]::after{ content:none; }
 
 /* ---------- section heads ---------- */
 .section{
-  padding-top: clamp(84px, 12vw, 144px);
-  padding-bottom: clamp(84px, 12vw, 144px);
+  padding-top: clamp(56px, 8vw, 96px);
+  padding-bottom: clamp(56px, 8vw, 96px);
 }
 .section-head{
   display:flex;
@@ -299,7 +299,7 @@ nav a[aria-current="page"]::after{ content:none; }
   border:none;
   border-top:1px solid var(--line);
   width:100%;
-  margin: clamp(80px, 10vw, 120px) 0;
+  margin: clamp(48px, 6vw, 80px) 0;
 }
 .work-entry{
   display:flex;
@@ -350,7 +350,6 @@ nav a[aria-current="page"]::after{ content:none; }
   font-weight: 500;
   margin: 0;
   line-height: 1.15;
-  max-width: 30ch;
 }
 .work-title a{
   color: inherit;
@@ -372,7 +371,6 @@ nav a[aria-current="page"]::after{ content:none; }
 .work-desc{
   color: var(--ink-soft);
   font-size: 16px;
-  max-width: 62ch;
   margin: 0;
 }
 .work-tags{
@@ -744,8 +742,8 @@ nav a[aria-current="page"]::after{ content:none; }
 /* ---------- contact ---------- */
 .contact{
   position: relative;
-  padding-top: clamp(84px, 12vw, 144px);
-  padding-bottom: clamp(84px, 12vw, 144px);
+  padding-top: clamp(56px, 8vw, 96px);
+  padding-bottom: clamp(56px, 8vw, 96px);
 }
 .contact-inner{
   display:flex;
