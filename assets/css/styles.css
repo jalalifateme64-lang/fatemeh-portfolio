@@ -590,25 +590,24 @@ nav a[aria-current="page"]::after{ content:none; }
   line-height: 1.4;
 }
 
-/* ---------- process timeline ---------- */
-.timeline{
+/* ---------- process steps ---------- */
+/* Each step is an image (reusing .frame, so it carries the same
+   accent-tinted placeholder treatment as the cover shot) followed by
+   its text, stacked — matching the homepage work-entry pattern rather
+   than a plain bulleted list. */
+.process-list{
   list-style:none;
   margin:0; padding:0;
-  border-left: 1px solid var(--line);
+  display:flex;
+  flex-direction:column;
+  gap: clamp(48px, 7vw, 72px);
 }
-.timeline-step{
-  position: relative;
-  padding: 0 0 clamp(32px, 5vw, 48px) 32px;
+.process-step{
+  display:flex;
+  flex-direction:column;
+  gap: 20px;
 }
-.timeline-step:last-child{ padding-bottom:0; }
-.timeline-step::before{
-  content:'';
-  position:absolute;
-  left:-4px; top: 2px;
-  width: 7px; height: 7px;
-  background: var(--accent);
-  border-radius: 50%;
-}
+.process-body{ max-width: 68ch; }
 .timeline-index{
   font-family: var(--sans);
   font-size: 12px;
@@ -619,31 +618,30 @@ nav a[aria-current="page"]::after{ content:none; }
   display:block;
   margin-bottom: 8px;
 }
-.timeline-step h3{
+.process-body h3{
   font-family: var(--serif);
   font-weight: 500;
   font-size: 20px;
   margin: 0 0 10px 0;
 }
-.timeline-step p{
+.process-body p{
   color: var(--ink-soft);
   font-size: 15px;
-  max-width: 60ch;
   margin: 0;
 }
 
-/* ---------- decision cards ---------- */
-.decision-grid{
-  display:grid;
-  grid-template-columns: 1fr;
-  gap: clamp(16px, 2.5vw, 24px);
+/* ---------- key decisions ---------- */
+.decision-list{
+  display:flex;
+  flex-direction:column;
+  gap: clamp(48px, 7vw, 72px);
 }
-.decision-card{
-  background: var(--bg-card);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  padding: clamp(24px, 3vw, 32px);
+.decision-item{
+  display:flex;
+  flex-direction:column;
+  gap: 20px;
 }
+.decision-body{ max-width: 68ch; }
 .decision-index{
   font-family: var(--sans);
   font-size: 12px;
@@ -654,19 +652,19 @@ nav a[aria-current="page"]::after{ content:none; }
   display:block;
   margin-bottom: 10px;
 }
-.decision-card h3{
+.decision-body h3{
   font-family: var(--serif);
   font-weight: 500;
   font-size: 21px;
   margin: 0 0 12px 0;
 }
-.decision-card p{
+.decision-body p{
   color: var(--ink-soft);
   font-size: 15px;
   margin: 0 0 10px 0;
 }
-.decision-card p:last-child{ margin-bottom:0; }
-.decision-card .label{
+.decision-body p:last-child{ margin-bottom:0; }
+.decision-body .label{
   font-family: var(--sans);
   font-size: 11px;
   font-weight: 600;
