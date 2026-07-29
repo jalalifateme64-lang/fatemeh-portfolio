@@ -484,10 +484,19 @@ nav a[aria-current="page"]::after{ content:none; }
   margin: 14px 0 0 0;
   max-width: 20ch;
 }
+.case-summary-label{
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 28px 0 10px 0;
+}
 .case-summary{
   font-size: 19px;
   color: var(--ink-soft);
-  margin: 20px 0 0 0;
+  margin: 0;
 }
 
 /* ---------- media frame (cover + inline images) ---------- */
