@@ -470,20 +470,6 @@ nav a[aria-current="page"]::after{ content:none; }
    Shared by case-study-1.html / case-study-2.html.
    ========================================================================== */
 
-/* breadcrumb above the case hero */
-.back-link{
-  font-family: var(--sans);
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--ink-soft);
-  text-decoration:none;
-  display:inline-flex;
-  align-items:center;
-  gap: 8px;
-}
-.back-link:hover{ color: var(--accent); }
-.back-link .arrow{ display:inline-block; transform: scaleX(-1); }
-
 /* ---------- case hero ---------- */
 .case-hero{
   padding-top: clamp(24px, 4vw, 40px);
@@ -492,16 +478,15 @@ nav a[aria-current="page"]::after{ content:none; }
 .case-hero h1{
   font-family: var(--serif);
   font-weight: 400;
-  font-size: clamp(30px, 5vw, 50px);
+  font-size: clamp(34px, 4.8vw, 56px);
   line-height: 1.12;
   letter-spacing: -0.015em;
   margin: 14px 0 0 0;
   max-width: 20ch;
 }
 .case-summary{
-  font-size: 17px;
+  font-size: 19px;
   color: var(--ink-soft);
-  max-width: 62ch;
   margin: 20px 0 0 0;
 }
 .case-meta{
@@ -557,9 +542,8 @@ nav a[aria-current="page"]::after{ content:none; }
 .frame--square{ aspect-ratio: 4/3; }
 
 /* ---------- prose ---------- */
-.prose{ max-width: 68ch; }
 .prose p{
-  font-size: 16px;
+  font-size: 17px;
   color: var(--ink-soft);
   margin: 0 0 18px 0;
 }
@@ -578,7 +562,7 @@ nav a[aria-current="page"]::after{ content:none; }
   background: var(--accent-soft);
   border-left: 2px solid var(--accent);
   padding: 20px 24px;
-  margin: 28px 0;
+  margin: clamp(24px, 4vw, 36px) 0;
   max-width: 62ch;
 }
 .callout p{
@@ -607,7 +591,6 @@ nav a[aria-current="page"]::after{ content:none; }
   flex-direction:column;
   gap: 20px;
 }
-.process-body{ max-width: 68ch; }
 .timeline-index{
   font-family: var(--sans);
   font-size: 12px;
@@ -641,7 +624,6 @@ nav a[aria-current="page"]::after{ content:none; }
   flex-direction:column;
   gap: 20px;
 }
-.decision-body{ max-width: 68ch; }
 .decision-index{
   font-family: var(--sans);
   font-size: 12px;
@@ -719,6 +701,9 @@ nav a[aria-current="page"]::after{ content:none; }
 }
 
 /* ---------- prev/next case nav ---------- */
+nav[aria-label="More work"]{
+  padding-bottom: clamp(56px, 8vw, 96px);
+}
 .case-switch{
   display:grid;
   grid-template-columns: 1fr;
