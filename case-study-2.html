@@ -8,7 +8,7 @@
 
 <meta property="og:type" content="article">
 <meta property="og:title" content="Fixing a Feature People Kept Giving Up On">
-<meta property="og:description" content="Volume Discount's creation rate had dropped from ~37% to ~12%. Research and a templating system brought it back to 27%.">
+<meta property="og:description" content="Volume Discount's creation rate had dropped from ~43% to ~12%. Research and a templating system brought it back to 27%.">
 <meta name="twitter:card" content="summary_large_image">
 
 <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
@@ -54,14 +54,27 @@
     <section class="section wrap">
       <div class="section-head reveal">
         <div>
+          <div class="section-label">Product context</div>
+          <h2 class="section-title">The app's most-used bundle type</h2>
+        </div>
+      </div>
+
+      <div class="prose reveal">
+        <p>I work on a top-ranked bundling app on the Shopify App Store, offering six bundle types to meet different merchant needs. Volume Discount — one of these six types — is designed for merchants who sell wholesale or want to encourage larger purchases: it lets them set discounts that increase with quantity (e.g., "Buy 3, save 10%; Buy 5, save 20%") on one or more products. It was consistently our most-used bundle type.</p>
+      </div>
+    </section>
+
+    <section class="section wrap">
+      <div class="section-head reveal">
+        <div>
           <div class="section-label">The problem</div>
           <h2 class="section-title">A steady decline, with no obvious cause</h2>
         </div>
       </div>
 
       <div class="prose reveal">
-        <p>Volume Discount is a bundling feature that lets merchants set up tiered, quantity-based discounts. Over seven months, its creation rate — the share of merchants who started setup and actually published a discount — fell from roughly <strong>37% to 12%</strong>. No single change explained the drop, which meant the problem was systemic rather than a broken step in the flow.</p>
-        <p>My job was to find out why merchants were dropping off, and whether the fix was a UX problem, a technical one, or both.</p>
+        <p>Starting in mid-April 2024, Volume Discount's creation rate — the percentage of merchants who installed the app and went on to create at least one Volume Discount — began a steady decline. From a peak of <strong>~43%</strong>, it dropped to as low as <strong>~12%</strong> by mid-November, falling behind bundle types it had previously outperformed.</p>
+        <p>No single change explained the drop, which meant the problem was systemic rather than a broken step in the flow. My job was to find out why merchants were dropping off, and whether the fix was a UX problem, a technical one, or both.</p>
       </div>
     </section>
 
@@ -174,7 +187,7 @@
       <div class="reveal">
         <div class="result-compare">
           <div class="result-stat">
-            <b>37%</b>
+            <b>43%</b>
             <span>Before the decline</span>
           </div>
           <div class="result-stat">
