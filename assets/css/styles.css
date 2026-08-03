@@ -548,6 +548,11 @@ nav a[aria-current="page"]::after{ content:none; }
 .prose li{ margin-bottom: 8px; }
 .prose li:last-child{ margin-bottom:0; }
 
+/* a .frame following body text within the same section (e.g. a supporting
+   chart under a problem statement) needs its own top gap, since .prose
+   itself carries no trailing margin. */
+.prose + .frame{ margin-top: clamp(28px, 4vw, 40px); }
+
 /* pull quote / callout, dropped inline in a section */
 .callout{
   background: var(--accent-soft);
