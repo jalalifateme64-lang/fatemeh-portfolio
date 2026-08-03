@@ -533,6 +533,12 @@ nav a[aria-current="page"]::after{ content:none; }
 .frame--square{ aspect-ratio: 4/3; }
 
 /* ---------- prose ---------- */
+.prose h3{
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 21px;
+  margin: 0 0 14px 0;
+}
 .prose p{
   font-size: 17px;
   color: var(--ink-soft);
@@ -550,8 +556,10 @@ nav a[aria-current="page"]::after{ content:none; }
 
 /* a .frame following body text within the same section (e.g. a supporting
    chart under a problem statement) needs its own top gap, since .prose
-   itself carries no trailing margin. */
+   itself carries no trailing margin. Same for a second .prose block
+   (e.g. a numbered sub-point) following the section's intro prose. */
 .prose + .frame{ margin-top: clamp(28px, 4vw, 40px); }
+.prose + .prose{ margin-top: clamp(28px, 4vw, 40px); }
 
 /* pull quote / callout, dropped inline in a section */
 .callout{
