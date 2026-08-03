@@ -606,8 +606,10 @@ nav a[aria-current="page"]::after{ content:none; }
 .process-body p{
   color: var(--ink-soft);
   font-size: 15px;
-  margin: 0;
+  margin: 0 0 12px 0;
 }
+.process-body p:last-child{ margin-bottom: 0; }
+.process-body strong{ color: var(--ink); font-weight: 500; }
 
 /* ---------- key decisions ---------- */
 .decision-list{
