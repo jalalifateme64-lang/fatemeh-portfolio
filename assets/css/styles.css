@@ -726,7 +726,7 @@ nav a[aria-current="page"]::after{ content:none; }
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--ink-faint);
+  color: var(--accent);
   text-align: left;
   padding: 16px 24px;
   background: var(--accent-soft);
@@ -772,7 +772,7 @@ nav a[aria-current="page"]::after{ content:none; }
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.06em;
-    color: var(--ink-faint);
+    color: var(--accent);
     margin-bottom: 4px;
   }
   .compare-table td:first-child::before{ display: none; }
@@ -790,7 +790,7 @@ nav a[aria-current="page"]::after{ content:none; }
 }
 .compare-thumb .frame{
   display: block;
-  aspect-ratio: 16/9;
+  aspect-ratio: 3/2;
   border-radius: var(--radius-sm);
   box-shadow: none;
   transition: opacity .2s ease;
