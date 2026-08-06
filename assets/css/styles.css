@@ -886,7 +886,15 @@ nav a[aria-current="page"]::after{ content:none; }
   margin: 8px 0 0 0;
 }
 
-.shot-grid[data-count="1"] .shot{ flex: 0 1 1000px; max-width: 1000px; }
+/* A single image is sized by available dialog height rather than a
+   fixed width, so the lightbox never needs to scroll for it — width
+   follows from the frame's own 3:2 ratio. */
+.shot-grid[data-count="1"] .shot{ flex: 0 1 auto; max-width: 100%; }
+.shot-grid[data-count="1"] .frame{
+  width: auto;
+  max-width: 100%;
+  height: min(calc(94vh - 180px), 700px);
+}
 .shot-grid[data-count="2"] .shot{ flex: 1 1 0; max-width: calc(50% - 10px); }
 .shot-grid[data-count="3"] .shot{ flex: 1 1 0; max-width: calc(33.333% - 14px); }
 .shot-grid:not([data-count="1"]):not([data-count="2"]):not([data-count="3"]) .shot{
