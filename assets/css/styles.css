@@ -820,7 +820,7 @@ nav a[aria-current="page"]::after{ content:none; }
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px;
+  padding: 16px;
 }
 .lightbox[hidden]{ display: none; }
 .lightbox-backdrop{
@@ -834,10 +834,10 @@ nav a[aria-current="page"]::after{ content:none; }
   border-radius: var(--radius);
   box-shadow: 0 24px 64px rgba(22, 24, 28, 0.3);
   width: 100%;
-  max-width: 920px;
-  max-height: 85vh;
+  max-width: 1400px;
+  max-height: 94vh;
   overflow-y: auto;
-  padding: clamp(20px, 4vw, 32px);
+  padding: clamp(20px, 3vw, 36px);
 }
 .lightbox-head{
   display: flex;
@@ -884,12 +884,12 @@ nav a[aria-current="page"]::after{ content:none; }
   margin: 8px 0 0 0;
 }
 
-.shot-grid[data-count="1"] .shot{ flex: 0 1 600px; max-width: 600px; }
+.shot-grid[data-count="1"] .shot{ flex: 0 1 1000px; max-width: 1000px; }
 .shot-grid[data-count="2"] .shot{ flex: 1 1 0; max-width: calc(50% - 10px); }
 .shot-grid[data-count="3"] .shot{ flex: 1 1 0; max-width: calc(33.333% - 14px); }
 .shot-grid:not([data-count="1"]):not([data-count="2"]):not([data-count="3"]) .shot{
-  flex: 1 1 260px;
-  max-width: 300px;
+  flex: 1 1 340px;
+  max-width: 420px;
 }
 
 @media (max-width: 700px){
