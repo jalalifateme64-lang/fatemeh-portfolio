@@ -31,72 +31,59 @@
     els.forEach(function (el) { io.observe(el); });
   }
 
-  /* ---------- app comparison tabs ---------- */
-  function setupAppTabs() {
-    var groups = document.querySelectorAll('.app-tabs');
+  /* ---------- competitor screenshot lightbox ---------- */
+  function setupCompareLightbox() {
+    var lightbox = document.getElementById('app-lightbox');
+    if (!lightbox) return;
 
-    groups.forEach(function (tabs) {
-      var buttons = Array.prototype.slice.call(tabs.querySelectorAll('.app-tab'));
-      if (!buttons.length) return;
+    var thumbs = Array.prototype.slice.call(document.querySelectorAll('.compare-thumb'));
+    if (!thumbs.length) return;
 
-      var wrap = tabs.closest('.app-tabs-wrap');
-      var panelsWrap = wrap ? wrap.querySelector('.app-panels') : null;
-      var resetTimer = null;
+    var galleries = Array.prototype.slice.call(lightbox.querySelectorAll('.shot-grid'));
+    var titleEl = lightbox.querySelector('.lightbox-title');
+    var closeEls = lightbox.querySelectorAll('[data-lightbox-close]');
+    var lastFocused = null;
 
-      var panels = buttons.map(function (btn) {
-        return document.getElementById(btn.getAttribute('aria-controls'));
+    function appName(btn) {
+      var row = btn.closest('tr');
+      var nameEl = row ? row.querySelector('.compare-app') : null;
+      return nameEl ? nameEl.textContent : '';
+    }
+
+    function open(key, btn) {
+      galleries.forEach(function (g) {
+        g.hidden = g.getAttribute('data-gallery-panel') !== key;
       });
+      if (titleEl) titleEl.textContent = appName(btn);
+      lastFocused = document.activeElement;
+      lightbox.hidden = false;
+      document.body.classList.add('lightbox-open');
+      var closeBtn = lightbox.querySelector('.lightbox-close');
+      if (closeBtn) closeBtn.focus();
+    }
 
-      function activate(index) {
-        var nextPanel = panels[index];
-        if (!nextPanel) return;
+    function close() {
+      if (lightbox.hidden) return;
+      lightbox.hidden = true;
+      document.body.classList.remove('lightbox-open');
+      if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
+    }
 
-        buttons.forEach(function (btn, i) {
-          var active = i === index;
-          btn.classList.toggle('is-active', active);
-          btn.setAttribute('aria-selected', active ? 'true' : 'false');
-        });
-
-        // Lock the wrapper to its current pixel height so the swap
-        // below animates to the new height instead of jumping —
-        // a 1-image tab and a 5-image tab shouldn't snap between
-        // each other.
-        if (panelsWrap && !reduceMotion.matches) {
-          panelsWrap.style.height = panelsWrap.getBoundingClientRect().height + 'px';
-        }
-
-        panels.forEach(function (panel, i) {
-          if (!panel) return;
-          if (i === index) {
-            panel.hidden = false;
-            // force a reflow so the transition below plays from
-            // the panel's hidden (opacity: 0) state.
-            void panel.offsetWidth;
-            panel.classList.add('is-active');
-          } else {
-            panel.classList.remove('is-active');
-            panel.hidden = true;
-          }
-        });
-
-        if (panelsWrap && !reduceMotion.matches) {
-          var targetHeight = nextPanel.scrollHeight;
-          requestAnimationFrame(function () {
-            panelsWrap.style.height = targetHeight + 'px';
-          });
-          window.clearTimeout(resetTimer);
-          resetTimer = window.setTimeout(function () {
-            panelsWrap.style.height = 'auto';
-          }, 320);
-        }
-      }
-
-      buttons.forEach(function (btn, i) {
-        btn.addEventListener('click', function () { activate(i); });
+    thumbs.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        open(btn.getAttribute('data-gallery'), btn);
       });
+    });
+
+    closeEls.forEach(function (el) {
+      el.addEventListener('click', close);
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') close();
     });
   }
 
   setupReveal();
-  setupAppTabs();
+  setupCompareLightbox();
 })();

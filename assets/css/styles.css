@@ -778,75 +778,103 @@ nav a[aria-current="page"]::after{ content:none; }
   .compare-table td:first-child::before{ display: none; }
 }
 
-/* ---------- competitor screenshot tabs ---------- */
-/* Nested inside .compare-table-wrap, right below the table, so the
-   comparison and its screenshots read as one card instead of two
-   separate blocks. */
-.app-tabs-wrap{
-  padding: 24px 24px 28px;
-  border-top: 1px solid var(--line);
+/* ---------- comparison-table screenshot thumbnail ---------- */
+.compare-thumb{
+  position: relative;
+  display: inline-block;
+  width: 96px;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
 }
-.app-tabs{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px 28px;
-  border-bottom: 1px solid var(--line);
-  margin-bottom: clamp(24px, 4vw, 32px);
+.compare-thumb .frame{
+  display: block;
+  aspect-ratio: 16/9;
+  border-radius: var(--radius-sm);
+  box-shadow: none;
+  transition: opacity .2s ease;
 }
-.app-tab{
+.compare-thumb:hover .frame{ opacity: 0.85; }
+.compare-thumb-count{
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  background: rgba(22, 24, 28, 0.72);
+  color: #FFFFFF;
   font-family: var(--sans);
-  font-size: 14px;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 20px;
+  line-height: 1.3;
+}
+
+/* ---------- screenshot lightbox ---------- */
+/* One reusable dialog for all four apps: setupCompareLightbox() in
+   main.js swaps which .shot-grid is visible and opens/closes it. */
+.lightbox{
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.lightbox[hidden]{ display: none; }
+.lightbox-backdrop{
+  position: absolute;
+  inset: 0;
+  background: rgba(22, 24, 28, 0.55);
+}
+.lightbox-dialog{
+  position: relative;
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  box-shadow: 0 24px 64px rgba(22, 24, 28, 0.3);
+  width: 100%;
+  max-width: 920px;
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: clamp(20px, 4vw, 32px);
+}
+.lightbox-head{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: clamp(20px, 3vw, 28px);
+}
+.lightbox-title{
+  font-family: var(--display-serif);
   font-weight: 500;
-  color: var(--ink-faint);
+  font-size: 20px;
+  color: var(--ink);
+}
+.lightbox-close{
   background: none;
   border: none;
+  font-size: 26px;
+  line-height: 1;
+  color: var(--ink-faint);
   cursor: pointer;
-  padding: 0 0 14px 0;
-  position: relative;
-  transition: color .2s ease;
+  padding: 4px 8px;
+  margin: -4px -8px 0 0;
 }
-.app-tab::after{
-  content: '';
-  position: absolute;
-  left: 0; right: 0; bottom: -1px;
-  height: 2px;
-  background: var(--accent);
-  transform: scaleX(0);
-  transition: transform .2s ease;
-}
-.app-tab:hover{ color: var(--ink); }
-.app-tab.is-active{ color: var(--ink); }
-.app-tab.is-active::after{ transform: scaleX(1); }
-
-/* Wraps whichever panel is showing. Given an explicit pixel height by
-   JS right before a tab switch, so swapping between a 1-image panel
-   and a 5-image panel animates smoothly instead of jumping. */
-.app-panels{
-  position: relative;
-  overflow: hidden;
-  transition: height .3s ease;
-}
-.app-panel{
-  opacity: 0;
-  transform: translateY(6px);
-  transition: opacity .25s ease, transform .25s ease;
-}
-.app-panel[hidden]{ display: none; }
-.app-panel.is-active{
-  opacity: 1;
-  transform: translateY(0);
-}
+.lightbox-close:hover{ color: var(--ink); }
 
 /* Flex + justify-content:center (rather than CSS grid) so an
    incomplete last row — e.g. Pumper's 5 images as 3 + 2 — centers
    itself instead of hugging the left edge with dead space on the
-   right. Column count/width per tab is driven by data-count. */
-.app-panel-grid{
+   right. Column count/width is driven by data-count. */
+.shot-grid{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
 }
+.shot-grid[hidden]{ display: none; }
 .shot{ display: flex; flex-direction: column; }
 .shot-caption{
   font-family: var(--sans);
@@ -856,20 +884,22 @@ nav a[aria-current="page"]::after{ content:none; }
   margin: 8px 0 0 0;
 }
 
-.app-panel-grid[data-count="1"] .shot{ flex: 0 1 600px; max-width: 600px; }
-.app-panel-grid[data-count="2"] .shot{ flex: 1 1 0; max-width: calc(50% - 10px); }
-.app-panel-grid[data-count="3"] .shot{ flex: 1 1 0; max-width: calc(33.333% - 14px); }
-.app-panel-grid:not([data-count="1"]):not([data-count="2"]):not([data-count="3"]) .shot{
+.shot-grid[data-count="1"] .shot{ flex: 0 1 600px; max-width: 600px; }
+.shot-grid[data-count="2"] .shot{ flex: 1 1 0; max-width: calc(50% - 10px); }
+.shot-grid[data-count="3"] .shot{ flex: 1 1 0; max-width: calc(33.333% - 14px); }
+.shot-grid:not([data-count="1"]):not([data-count="2"]):not([data-count="3"]) .shot{
   flex: 1 1 260px;
   max-width: 300px;
 }
 
 @media (max-width: 700px){
-  .app-panel-grid[data-count]:not([data-count="1"]) .shot{
+  .shot-grid[data-count]:not([data-count="1"]) .shot{
     flex: 1 1 100%;
     max-width: 100%;
   }
 }
+
+body.lightbox-open{ overflow: hidden; }
 
 /* ---------- prev/next case nav ---------- */
 nav[aria-label="More work"]{
