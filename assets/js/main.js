@@ -31,5 +31,45 @@
     els.forEach(function (el) { io.observe(el); });
   }
 
+  /* ---------- app comparison tabs ---------- */
+  function setupAppTabs() {
+    var groups = document.querySelectorAll('.app-tabs');
+
+    groups.forEach(function (tabs) {
+      var buttons = Array.prototype.slice.call(tabs.querySelectorAll('.app-tab'));
+      if (!buttons.length) return;
+
+      var panels = buttons.map(function (btn) {
+        return document.getElementById(btn.getAttribute('aria-controls'));
+      });
+
+      function activate(index) {
+        buttons.forEach(function (btn, i) {
+          var active = i === index;
+          btn.classList.toggle('is-active', active);
+          btn.setAttribute('aria-selected', active ? 'true' : 'false');
+        });
+        panels.forEach(function (panel, i) {
+          if (!panel) return;
+          if (i === index) {
+            panel.hidden = false;
+            // force a reflow so the transition below plays from
+            // the panel's hidden (opacity: 0) state.
+            void panel.offsetWidth;
+            panel.classList.add('is-active');
+          } else {
+            panel.classList.remove('is-active');
+            panel.hidden = true;
+          }
+        });
+      }
+
+      buttons.forEach(function (btn, i) {
+        btn.addEventListener('click', function () { activate(i); });
+      });
+    });
+  }
+
   setupReveal();
+  setupAppTabs();
 })();
