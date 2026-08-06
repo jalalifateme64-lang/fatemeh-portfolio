@@ -39,16 +39,32 @@
       var buttons = Array.prototype.slice.call(tabs.querySelectorAll('.app-tab'));
       if (!buttons.length) return;
 
+      var wrap = tabs.closest('.app-tabs-wrap');
+      var panelsWrap = wrap ? wrap.querySelector('.app-panels') : null;
+      var resetTimer = null;
+
       var panels = buttons.map(function (btn) {
         return document.getElementById(btn.getAttribute('aria-controls'));
       });
 
       function activate(index) {
+        var nextPanel = panels[index];
+        if (!nextPanel) return;
+
         buttons.forEach(function (btn, i) {
           var active = i === index;
           btn.classList.toggle('is-active', active);
           btn.setAttribute('aria-selected', active ? 'true' : 'false');
         });
+
+        // Lock the wrapper to its current pixel height so the swap
+        // below animates to the new height instead of jumping —
+        // a 1-image tab and a 5-image tab shouldn't snap between
+        // each other.
+        if (panelsWrap && !reduceMotion.matches) {
+          panelsWrap.style.height = panelsWrap.getBoundingClientRect().height + 'px';
+        }
+
         panels.forEach(function (panel, i) {
           if (!panel) return;
           if (i === index) {
@@ -62,6 +78,17 @@
             panel.hidden = true;
           }
         });
+
+        if (panelsWrap && !reduceMotion.matches) {
+          var targetHeight = nextPanel.scrollHeight;
+          requestAnimationFrame(function () {
+            panelsWrap.style.height = targetHeight + 'px';
+          });
+          window.clearTimeout(resetTimer);
+          resetTimer = window.setTimeout(function () {
+            panelsWrap.style.height = 'auto';
+          }, 320);
+        }
       }
 
       buttons.forEach(function (btn, i) {

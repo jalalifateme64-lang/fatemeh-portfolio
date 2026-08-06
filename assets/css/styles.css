@@ -818,6 +818,14 @@ nav a[aria-current="page"]::after{ content:none; }
 .app-tab.is-active{ color: var(--ink); }
 .app-tab.is-active::after{ transform: scaleX(1); }
 
+/* Wraps whichever panel is showing. Given an explicit pixel height by
+   JS right before a tab switch, so swapping between a 1-image panel
+   and a 5-image panel animates smoothly instead of jumping. */
+.app-panels{
+  position: relative;
+  overflow: hidden;
+  transition: height .3s ease;
+}
 .app-panel{
   opacity: 0;
   transform: translateY(6px);
@@ -828,13 +836,39 @@ nav a[aria-current="page"]::after{ content:none; }
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Flex + justify-content:center (rather than CSS grid) so an
+   incomplete last row — e.g. Pumper's 5 images as 3 + 2 — centers
+   itself instead of hugging the left edge with dead space on the
+   right. Column count/width per tab is driven by data-count. */
 .app-panel-grid{
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 20px;
 }
-@media (min-width: 700px){
-  .app-panel-grid{ grid-template-columns: 1fr 1fr; }
+.shot{ display: flex; flex-direction: column; }
+.shot-caption{
+  font-family: var(--sans);
+  font-size: 12px;
+  color: var(--ink-faint);
+  text-align: center;
+  margin: 8px 0 0 0;
+}
+
+.app-panel-grid[data-count="1"] .shot{ flex: 0 1 600px; max-width: 600px; }
+.app-panel-grid[data-count="2"] .shot{ flex: 1 1 0; max-width: calc(50% - 10px); }
+.app-panel-grid[data-count="3"] .shot{ flex: 1 1 0; max-width: calc(33.333% - 14px); }
+.app-panel-grid:not([data-count="1"]):not([data-count="2"]):not([data-count="3"]) .shot{
+  flex: 1 1 260px;
+  max-width: 300px;
+}
+
+@media (max-width: 700px){
+  .app-panel-grid[data-count]:not([data-count="1"]) .shot{
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
 }
 
 /* ---------- prev/next case nav ---------- */
