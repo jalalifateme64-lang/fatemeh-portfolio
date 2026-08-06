@@ -779,7 +779,13 @@ nav a[aria-current="page"]::after{ content:none; }
 }
 
 /* ---------- competitor screenshot tabs ---------- */
-.app-tabs-wrap{ margin: clamp(32px, 5vw, 48px) 0 0 0; }
+/* Nested inside .compare-table-wrap, right below the table, so the
+   comparison and its screenshots read as one card instead of two
+   separate blocks. */
+.app-tabs-wrap{
+  padding: 24px 24px 28px;
+  border-top: 1px solid var(--line);
+}
 .app-tabs{
   display: flex;
   flex-wrap: wrap;
