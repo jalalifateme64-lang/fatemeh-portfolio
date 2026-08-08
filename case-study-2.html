@@ -323,6 +323,49 @@
     <section class="section wrap">
       <div class="section-head reveal">
         <div>
+          <div class="section-label">Implementation</div>
+          <h2 class="section-title">Designing the template structure</h2>
+        </div>
+      </div>
+
+      <div class="prose reveal">
+        <p><strong>The core idea.</strong> Since backward compatibility was fundamentally a technical constraint, I brought the problem to engineering before designing a solution. Their guidance: every existing version of a bundle's design and logic had to stay untouched for merchants already using it — new features could only reach new merchants, or existing merchants who chose to migrate. This led to the core idea: separate a bundle's logic from its UI, and treat each combination as a distinct, versioned unit — so a design change creates a new version instead of overwriting the old one.</p>
+        <p><strong>A three-layer structure.</strong> I translated that into three layers, each with a distinct reason for existing:</p>
+        <ul>
+          <li><strong>Design</strong> — the layout itself, the only layer allowed to represent a major visual difference (vertical vs. horizontal), since each layout came with its own technical constraints.</li>
+          <li><strong>Design Variant</strong> — new, optional settings within a Design, so merchants who didn't need a new option weren't affected by it. This came directly from merchant requests for different option combinations within the same layout.</li>
+          <li><strong>Template</strong> — a Design Variant plus a set of default values (thresholds, option settings), letting one Variant support multiple ready-made starting points.</li>
+        </ul>
+      </div>
+
+      <div class="layer-diagram reveal">
+        <div class="layer-diagram-item">
+          <span class="layer-diagram-index">1</span>
+          <h4>Design</h4>
+          <p>The layout itself</p>
+        </div>
+        <span class="layer-diagram-arrow">→</span>
+        <div class="layer-diagram-item">
+          <span class="layer-diagram-index">2</span>
+          <h4>Design Variant</h4>
+          <p>Optional settings within a Design</p>
+        </div>
+        <span class="layer-diagram-arrow">→</span>
+        <div class="layer-diagram-item">
+          <span class="layer-diagram-index">3</span>
+          <h4>Template</h4>
+          <p>A Variant + default values</p>
+        </div>
+      </div>
+
+      <div class="prose reveal">
+        <p>I considered fewer or more layers, but three matched what merchants actually needed — merchant feedback showed real, option-level needs that justified keeping Design Variant separate, while a fourth layer would have added flexibility we had no evidence merchants needed.</p>
+      </div>
+    </section>
+
+    <section class="section wrap">
+      <div class="section-head reveal">
+        <div>
           <div class="section-label">Result</div>
           <h2 class="section-title">Creation rate recovered — and kept more trials</h2>
         </div>
