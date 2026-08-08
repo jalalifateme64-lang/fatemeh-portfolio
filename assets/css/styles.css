@@ -798,7 +798,7 @@ nav a[aria-current="page"]::after{ content:none; }
 }
 .compare-table th{
   font-family: var(--sans);
-  font-size: 11.5px;
+  font-size: 12px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -810,7 +810,8 @@ nav a[aria-current="page"]::after{ content:none; }
 }
 .compare-table td{
   padding: 20px 24px;
-  font-size: 14.5px;
+  font-family: var(--sans);
+  font-size: 17px;
   line-height: 1.5;
   color: var(--ink-soft);
   border-bottom: 1px solid var(--line);
@@ -819,7 +820,7 @@ nav a[aria-current="page"]::after{ content:none; }
 .compare-table tr:last-child td{ border-bottom: none; }
 .compare-table em{ color: var(--ink); font-style: italic; }
 .compare-app{
-  font-family: var(--display-serif);
+  font-family: var(--serif);
   font-weight: 500;
   font-size: 17px;
   color: var(--ink);
@@ -844,7 +845,7 @@ nav a[aria-current="page"]::after{ content:none; }
     content: attr(data-label);
     display: block;
     font-family: var(--sans);
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.06em;
