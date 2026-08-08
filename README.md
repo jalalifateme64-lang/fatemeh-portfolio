@@ -18,9 +18,9 @@ robots.txt
 PROJECT-BRIEF.md        Content decisions, visual direction, open questions
 ```
 
-Still to build: `case-study-1.html`, `case-study-2.html`, `about.html`.
-The homepage already links to the two case studies, so those links 404 until
-the pages exist.
+Case studies live at `fixing-a-feature-people-kept-giving-up-on.html` and
+`a-new-feature-an-old-assumption.html` — named after their titles rather than
+generic slugs.
 
 ## Working on it locally
 
