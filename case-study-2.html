@@ -312,7 +312,7 @@
         <p>Two separate problems pointed toward the same solution.</p>
         <p><strong>The UX problem.</strong> Our competitor research showed that merchants needed to see something close to the <em>final outcome</em> early — not configure abstract settings first. Fixing this properly meant more than adding a badge or reordering a page; it meant giving merchants a way to start from a visual, ready-made starting point.</p>
         <p><strong>The technical problem.</strong> Separately, our engineering team had a long-standing, growing concern that applied across the entire app: every new feature added to <em>any</em> bundle type raised <strong>backward compatibility</strong> issues for merchants who had joined before that feature existed — especially those with custom code on their widgets. Without any version handling, maintaining backward compatibility got harder with every release, and the codebase became more complex and riskier to ship, regardless of which bundle type it touched.</p>
-        <div class="callout">
+        <div class="callout callout--wide">
           <p>Both problems shared a root cause: we had no structural way to introduce a new experience without breaking backward compatibility for existing merchants.</p>
         </div>
         <p>A template system — separating <em>logic</em> from <em>UI</em>, and versioning each visual/functional combination — would solve the UX problem we'd found in Volume Discount and the backward compatibility problem across the whole app, at the same time.</p>

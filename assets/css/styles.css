@@ -573,6 +573,7 @@ nav a[aria-current="page"]::after{ content:none; }
   margin: clamp(24px, 4vw, 36px) 0;
   max-width: 62ch;
 }
+.callout--wide{ max-width: none; }
 .callout p{
   font-family: var(--serif);
   font-style: italic;
