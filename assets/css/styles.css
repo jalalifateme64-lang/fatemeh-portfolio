@@ -561,6 +561,7 @@ nav a[aria-current="page"]::after{ content:none; }
    for text resuming after an inline frame. */
 .prose + .frame,
 .frame + .prose,
+.frame + .frame,
 .compare-table-wrap + .prose,
 .lightbox + .prose,
 .prose + .layer-diagram,
