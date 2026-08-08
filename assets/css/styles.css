@@ -997,28 +997,29 @@ nav[aria-label="More work"]{
   gap: clamp(16px, 2.5vw, 24px);
 }
 .case-switch-link{
-  background: var(--bg-card);
+  background: #FFFFFF;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   border: 2px solid transparent;
+  outline: none;
   padding: clamp(24px, 4vw, 40px);
   text-decoration:none;
   color: inherit;
   display:flex;
   flex-direction:column;
   gap: 8px;
-  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  transition: transform .2s ease, border-color .2s ease;
 }
-.case-switch-link:hover{
-  transform: translateY(-3px);
-  border-color: var(--accent);
-  box-shadow: none;
-}
+.case-switch-link:hover,
 .case-switch-link:focus-visible{
-  outline: none;
+  transform: translateY(-3px);
+  background: #FFFFFF;
+  box-shadow: var(--shadow);
   border-color: var(--accent);
+  outline: none;
 }
-.case-switch-link:hover .case-switch-title{ color: var(--accent); }
+.case-switch-link:hover .case-switch-title,
+.case-switch-link:focus-visible .case-switch-title{ color: var(--accent); }
 .case-switch-label{
   font-family: var(--sans);
   font-size: 12px;
