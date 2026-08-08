@@ -125,20 +125,20 @@ header{
   letter-spacing: -0.01em;
   text-decoration:none;
 }
-nav{
+.header-row nav{
   display:flex;
   gap: clamp(18px, 3vw, 36px);
   font-family: var(--sans);
   font-size: 14px;
   font-weight: 500;
 }
-nav a{
+.header-row nav a{
   text-decoration:none;
   color: var(--ink-soft);
   position:relative;
   padding-bottom: 2px;
 }
-nav a::after{
+.header-row nav a::after{
   content:'';
   position:absolute;
   left:0; bottom:0;
@@ -149,14 +149,14 @@ nav a::after{
   transform-origin: right;
   transition: transform .25s ease;
 }
-nav a:hover{ color: var(--ink); }
-nav a:hover::after{ transform: scaleX(1); transform-origin: left; }
+.header-row nav a:hover{ color: var(--ink); }
+.header-row nav a:hover::after{ transform: scaleX(1); transform-origin: left; }
 /* Current page in a multi-page nav. */
-nav a[aria-current="page"]{
+.header-row nav a[aria-current="page"]{
   color: var(--ink);
   border-bottom: 1px solid var(--accent);
 }
-nav a[aria-current="page"]::after{ content:none; }
+.header-row nav a[aria-current="page"]::after{ content:none; }
 
 /* ---------- buttons ---------- */
 .btn{
