@@ -1011,6 +1011,7 @@ nav[aria-label="More work"]{
 .case-switch-link:hover{
   transform: translateY(-3px);
   border-color: var(--accent);
+  box-shadow: none;
 }
 .case-switch-link:hover .case-switch-title{ color: var(--accent); }
 .case-switch-label{
