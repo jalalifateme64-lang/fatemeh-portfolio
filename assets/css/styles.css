@@ -567,7 +567,8 @@ nav a[aria-current="page"]::after{ content:none; }
 .prose + .layer-diagram,
 .layer-diagram + .prose,
 .result-compare-wrap + .prose,
-.prose + .result-block{ margin-top: clamp(28px, 4vw, 40px); }
+.prose + .result-block,
+.frame + .result-block{ margin-top: clamp(28px, 4vw, 40px); }
 .prose + .prose{ margin-top: clamp(28px, 4vw, 40px); }
 
 /* ---------- layer diagram ---------- */
