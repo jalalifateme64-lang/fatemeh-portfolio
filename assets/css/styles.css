@@ -573,12 +573,15 @@ nav a[aria-current="page"]::after{ content:none; }
    looking like a technical flowchart. */
 .layer-diagram{
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
   gap: 10px;
   flex-wrap: wrap;
 }
 .layer-diagram-item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background: var(--accent-soft);
   border-radius: var(--radius);
   padding: 24px 20px;
@@ -599,6 +602,7 @@ nav a[aria-current="page"]::after{ content:none; }
   font-size: 12px;
   font-weight: 600;
   margin-bottom: 12px;
+  flex-shrink: 0;
 }
 .layer-diagram-item h4{
   font-family: var(--serif);
