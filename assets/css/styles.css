@@ -1014,6 +1014,10 @@ nav[aria-label="More work"]{
   border-color: var(--accent);
   box-shadow: none;
 }
+.case-switch-link:focus-visible{
+  outline: none;
+  border-color: var(--accent);
+}
 .case-switch-link:hover .case-switch-title{ color: var(--accent); }
 .case-switch-label{
   font-family: var(--sans);
