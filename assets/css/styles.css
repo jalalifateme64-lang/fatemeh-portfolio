@@ -661,91 +661,6 @@ header{
   line-height: 1.4;
 }
 
-/* ---------- process steps ---------- */
-/* Each step is an image (reusing .frame, so it carries the same
-   accent-tinted placeholder treatment as the cover shot) followed by
-   its text, stacked — matching the homepage work-entry pattern rather
-   than a plain bulleted list. */
-.process-list{
-  list-style:none;
-  margin:0; padding:0;
-  display:flex;
-  flex-direction:column;
-  gap: clamp(48px, 7vw, 72px);
-}
-.process-step{
-  display:flex;
-  flex-direction:column;
-  gap: 20px;
-}
-.timeline-index{
-  font-family: var(--sans);
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--accent);
-  display:block;
-  margin-bottom: 8px;
-}
-.process-body h3{
-  font-family: var(--serif);
-  font-weight: 500;
-  font-size: 20px;
-  margin: 0 0 10px 0;
-}
-.process-body p{
-  color: var(--ink-soft);
-  font-size: 15px;
-  margin: 0 0 12px 0;
-}
-.process-body p:last-child{ margin-bottom: 0; }
-.process-body strong{ color: var(--ink); font-weight: 500; }
-
-/* ---------- key decisions ---------- */
-.decision-list{
-  display:flex;
-  flex-direction:column;
-  gap: clamp(48px, 7vw, 72px);
-}
-.decision-item{
-  display:flex;
-  flex-direction:column;
-  gap: 20px;
-}
-.decision-index{
-  font-family: var(--sans);
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--accent);
-  display:block;
-  margin-bottom: 10px;
-}
-.decision-body h3{
-  font-family: var(--serif);
-  font-weight: 500;
-  font-size: 21px;
-  margin: 0 0 12px 0;
-}
-.decision-body p{
-  color: var(--ink-soft);
-  font-size: 15px;
-  margin: 0 0 10px 0;
-}
-.decision-body p:last-child{ margin-bottom:0; }
-.decision-body .label{
-  font-family: var(--sans);
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--ink-faint);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  display:block;
-  margin-bottom: 4px;
-}
-
 /* ---------- result comparison ---------- */
 .result-compare{
   display:flex;
@@ -777,18 +692,6 @@ header{
   font-size: 28px;
   color: var(--line-strong);
 }
-.result-highlight{
-  font-family: var(--sans);
-  font-size: 14px;
-  color: var(--ink);
-  background: var(--accent-soft);
-  display:inline-block;
-  width:fit-content;
-  padding: 11px 18px;
-  border-radius: var(--radius-sm);
-  margin-top: clamp(20px, 3vw, 32px);
-}
-
 /* ---------- competitor comparison table ---------- */
 .compare-table-wrap{
   margin: clamp(28px, 4vw, 40px) 0 0 0;
