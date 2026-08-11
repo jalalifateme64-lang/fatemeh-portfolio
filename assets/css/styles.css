@@ -573,6 +573,8 @@ header{
 .lightbox + .prose,
 .prose + .layer-diagram,
 .layer-diagram + .prose,
+.prose + .concept-diagram,
+.concept-diagram + .prose,
 .result-compare-wrap + .prose,
 .prose + .result-block,
 .frame + .result-block{ margin-top: clamp(28px, 4vw, 40px); }
@@ -640,6 +642,96 @@ header{
 @media (max-width: 700px){
   .layer-diagram{ flex-direction: column; }
   .layer-diagram-arrow{ transform: rotate(90deg); }
+}
+
+/* ---------- concept diagram (building blocks + principles) ---------- */
+/* Two-part explainer: a numbered flow of the four parts an offer breaks
+   into, then a row of principle cards with a monoline icon each. White
+   fill throughout, with the case study's accent reserved for connectors
+   and icon strokes so it stays restrained. */
+.concept-diagram{
+  display: flex;
+  flex-direction: column;
+  gap: clamp(28px, 4vw, 40px);
+}
+.concept-blocks{
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.concept-block{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 20px 16px;
+  text-align: center;
+  flex: 1 1 130px;
+  max-width: 170px;
+}
+.concept-block-label{
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--ink);
+}
+.concept-connector{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+.concept-connector svg{ display:block; width: 20px; height: 20px; }
+@media (max-width: 700px){
+  .concept-blocks{ flex-direction: column; }
+  .concept-connector svg{ transform: rotate(90deg); }
+}
+
+.concept-principles{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+.concept-principle{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 22px 18px;
+  text-align: center;
+  flex: 1 1 200px;
+  max-width: 240px;
+}
+.concept-icon{
+  width: 28px;
+  height: 28px;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+.concept-icon circle,
+.concept-icon path,
+.concept-icon polyline,
+.concept-icon line{
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.concept-principle p{
+  font-family: var(--sans);
+  font-size: 13px;
+  color: var(--ink-soft);
+  margin: 0;
 }
 
 /* pull quote / callout, dropped inline in a section */
