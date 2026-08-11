@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="./assets/css/styles.css?v=8">
+<link rel="stylesheet" href="./assets/css/styles.css?v=9">
 <script src="./assets/js/main.js" defer></script>
 </head>
 <body>
@@ -107,47 +107,38 @@
       </div>
 
       <div class="concept-diagram reveal">
-        <div class="concept-blocks">
-          <div class="concept-block">
-            <span class="layer-diagram-index">1</span>
-            <span class="concept-block-label">Main product</span>
-          </div>
-          <span class="concept-connector" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><line x1="3" y1="12" x2="19" y2="12"></line><polyline points="14 6 20 12 14 18"></polyline></svg>
-          </span>
-          <div class="concept-block">
-            <span class="layer-diagram-index">2</span>
-            <span class="concept-block-label">Add-on items</span>
-          </div>
-          <span class="concept-connector" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><line x1="3" y1="12" x2="19" y2="12"></line><polyline points="14 6 20 12 14 18"></polyline></svg>
-          </span>
-          <div class="concept-block">
-            <span class="layer-diagram-index">3</span>
-            <span class="concept-block-label">Discount</span>
-          </div>
-          <span class="concept-connector" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><line x1="3" y1="12" x2="19" y2="12"></line><polyline points="14 6 20 12 14 18"></polyline></svg>
-          </span>
-          <div class="concept-block">
-            <span class="layer-diagram-index">4</span>
-            <span class="concept-block-label">Rules</span>
-          </div>
-        </div>
+        <svg class="concept-illustration" viewBox="0 0 300 175" aria-hidden="true">
+          <rect class="cpt-boundary" x="6" y="8" width="288" height="150" rx="16"></rect>
+          <text class="cpt-rules-label" x="24" y="24">RULES</text>
+
+          <rect class="cpt-main" x="26" y="29" width="118" height="110" rx="10"></rect>
+          <text class="cpt-shape-label" x="85" y="157">Main product</text>
+
+          <line class="cpt-connector" x1="153" y1="84" x2="169" y2="84"></line>
+          <line class="cpt-connector" x1="161" y1="76" x2="161" y2="92"></line>
+
+          <rect class="cpt-addon" x="178" y="49" width="72" height="72" rx="8"></rect>
+          <text class="cpt-shape-label" x="214" y="157">Add-on</text>
+
+          <circle class="cpt-badge" cx="248" cy="38" r="13"></circle>
+          <line class="cpt-badge-mark" x1="243" y1="43" x2="253" y2="33"></line>
+          <circle class="cpt-badge-dot" cx="244.5" cy="34.5" r="1.6"></circle>
+          <circle class="cpt-badge-dot" cx="251.5" cy="41.5" r="1.6"></circle>
+        </svg>
 
         <div class="concept-principles">
           <div class="concept-principle">
             <svg class="concept-icon" viewBox="0 0 24 24" aria-hidden="true">
               <polyline points="5 12.5 10 17.5 19 7"></polyline>
             </svg>
-            <p>An easy yes, not a second pitch</p>
+            <span>An easy yes</span>
           </div>
           <div class="concept-principle">
             <svg class="concept-icon" viewBox="0 0 24 24" aria-hidden="true">
               <circle cx="9" cy="12" r="5.5"></circle>
               <circle cx="15" cy="12" r="5.5"></circle>
             </svg>
-            <p>Small and relevant to the main product</p>
+            <span>Small, relevant</span>
           </div>
           <div class="concept-principle">
             <svg class="concept-icon" viewBox="0 0 24 24" aria-hidden="true">
@@ -155,14 +146,14 @@
               <line x1="12" y1="12" x2="12" y2="7"></line>
               <line x1="12" y1="12" x2="15.5" y2="14"></line>
             </svg>
-            <p>Shown once the decision is already made</p>
+            <span>Right timing</span>
           </div>
           <div class="concept-principle">
             <svg class="concept-icon" viewBox="0 0 24 24" aria-hidden="true">
               <line x1="6" y1="4" x2="6" y2="20"></line>
               <path d="M6 5 L18 5 L14.5 8.5 L18 12 L6 12"></path>
             </svg>
-            <p>Appears near the end of the journey</p>
+            <span>Near the end</span>
           </div>
         </div>
       </div>
