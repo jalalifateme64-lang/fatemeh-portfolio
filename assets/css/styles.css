@@ -537,6 +537,7 @@ header{
 .frame--cover{ aspect-ratio: 3/2; }
 .frame--wide{ aspect-ratio: 16/9; }
 .frame--square{ aspect-ratio: 4/3; }
+.frame--1x1{ aspect-ratio: 1/1; }
 
 /* ---------- screenshot frame (browser chrome) ---------- */
 /* A lightweight "browser window" shell for native, hand-built visuals
