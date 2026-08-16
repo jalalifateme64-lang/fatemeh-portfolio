@@ -558,12 +558,12 @@ header{
   stroke-linecap: round;
   stroke-dasharray: 2000;
   stroke-dashoffset: 2000;
-  transition: stroke-dashoffset 1.1s cubic-bezier(.4, 0, .2, 1) .35s;
+  transition: stroke-dashoffset 2.2s cubic-bezier(.16, 1, .3, 1) .3s;
 }
 .frame-annotated .arrow-dot{
   fill: var(--accent);
   opacity: 0;
-  transition: opacity .3s ease .35s;
+  transition: opacity .5s ease .3s;
 }
 .frame-annotated.in .arrow-path{ stroke-dashoffset: 0; }
 .frame-annotated.in .arrow-dot{ opacity: 1; }
