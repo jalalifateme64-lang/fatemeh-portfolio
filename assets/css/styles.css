@@ -714,11 +714,27 @@ header{
 .prose p:last-child{ margin-bottom:0; }
 .prose strong{ color: var(--ink); font-weight: 500; }
 .prose ul{
+  list-style: none;
   margin: 0 0 18px 0;
-  padding-left: 20px;
+  padding: 0;
   color: var(--ink-soft);
 }
-.prose li{ margin-bottom: 8px; text-align: justify; }
+.prose li{
+  position: relative;
+  margin-bottom: 12px;
+  padding-left: 22px;
+  text-align: justify;
+}
+.prose li::before{
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 9px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
 .prose li:last-child{ margin-bottom:0; }
 
 /* a .frame following body text within the same section (e.g. a supporting

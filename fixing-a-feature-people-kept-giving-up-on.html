@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="./assets/css/styles.css?v=18">
+<link rel="stylesheet" href="./assets/css/styles.css?v=19">
 <script src="./assets/js/main.js" defer></script>
 </head>
 <body>
@@ -105,8 +105,10 @@
       <div class="prose reveal">
         <h3>1. Auditing the current journey</h3>
         <p>I mapped out the entire path a merchant takes to create a Volume Discount, and found friction at nearly every step:</p>
-        <p><strong>Getting discovered.</strong> Volume Discount ranked 13th in App Store search results for "Volume Discount," and didn't appear on the first page at all for "Quantity Breaks" — a term many merchants search for instead.</p>
-        <p><strong>Choosing the type.</strong> On the "Select bundle type" page, Volume Discount was the only one of the three main types <em>without</em> a "Buy X get Y available" badge — the visual element that drew the most attention on the page. Despite this, it had a higher creation rate than the two badged types.</p>
+        <ul>
+          <li><strong>Getting discovered.</strong> Volume Discount ranked 13th in App Store search results for "Volume Discount," and didn't appear on the first page at all for "Quantity Breaks" — a term many merchants search for instead.</li>
+          <li><strong>Choosing the type.</strong> On the "Select bundle type" page, Volume Discount was the only one of the three main types <em>without</em> a "Buy X get Y available" badge — the visual element that drew the most attention on the page. Despite this, it had a higher creation rate than the two badged types.</li>
+        </ul>
       </div>
 
       <div class="frame frame--cover reveal">
@@ -283,7 +285,13 @@
 
       <div class="prose reveal">
         <h3>4. Listening to customer-facing teams</h3>
-        <p>Our Customer Success and Support teams — who talk to merchants directly — surfaced recurring, specific requests: showing unit price per option, supporting quantity ranges rather than fixed thresholds, letting merchants set a unique image per discount option, and improving the widget's loading speed.</p>
+        <p>Our Customer Success and Support teams — who talk to merchants directly — surfaced recurring, specific requests:</p>
+        <ul>
+          <li>Showing unit price per option</li>
+          <li>Supporting quantity ranges rather than fixed thresholds</li>
+          <li>Letting merchants set a unique image per discount option</li>
+          <li>Improving the widget's loading speed</li>
+        </ul>
       </div>
 
       <div class="prose reveal">
@@ -310,9 +318,11 @@
       </div>
 
       <div class="prose reveal">
-        <p>Two separate problems pointed toward the same solution.</p>
-        <p><strong>The UX problem.</strong> Our competitor research showed that merchants needed to see something close to the <em>final outcome</em> early — not configure abstract settings first. Fixing this properly meant more than adding a badge or reordering a page; it meant giving merchants a way to start from a visual, ready-made starting point.</p>
-        <p><strong>The technical problem.</strong> Separately, our engineering team had a long-standing, growing concern that applied across the entire app: every new feature added to <em>any</em> bundle type raised <strong>backward compatibility</strong> issues for merchants who had joined before that feature existed — especially those with custom code on their widgets. Without any version handling, maintaining backward compatibility got harder with every release, and the codebase became more complex and riskier to ship, regardless of which bundle type it touched.</p>
+        <p>Two separate problems pointed toward the same solution:</p>
+        <ul>
+          <li><strong>The UX problem.</strong> Our competitor research showed that merchants needed to see something close to the <em>final outcome</em> early — not configure abstract settings first. Fixing this properly meant more than adding a badge or reordering a page; it meant giving merchants a way to start from a visual, ready-made starting point.</li>
+          <li><strong>The technical problem.</strong> Separately, our engineering team had a long-standing, growing concern that applied across the entire app: every new feature added to <em>any</em> bundle type raised <strong>backward compatibility</strong> issues for merchants who had joined before that feature existed — especially those with custom code on their widgets. Without any version handling, maintaining backward compatibility got harder with every release, and the codebase became more complex and riskier to ship, regardless of which bundle type it touched.</li>
+        </ul>
         <div class="callout callout--wide">
           <p>Both problems shared a root cause: we had no structural way to introduce a new experience without breaking backward compatibility for existing merchants.</p>
         </div>

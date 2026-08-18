@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="./assets/css/styles.css?v=18">
+<link rel="stylesheet" href="./assets/css/styles.css?v=19">
 <script src="./assets/js/main.js" defer></script>
 </head>
 <body>
@@ -94,7 +94,12 @@
       <div class="prose reveal">
         <h3>1. Researching what merchants actually needed</h3>
         <p>I spent the following weeks on research from three directions. I read through support threads to find the earliest, clearest statements of what merchants actually wanted, which surfaced a consistent pattern: most people already used the word "add-on," expected it to appear once a specific product was in the cart, and disagreed mainly on whether the customer or the merchant should choose the item. Everyone agreed it belonged on the main product's page.</p>
-        <p>I also audited the leading Shopify apps offering something similar, to see how they structured the setup flow and the storefront experience, and read outside the Shopify ecosystem entirely, into how add-ons function as an upsell tactic in retail generally. A few ideas kept surfacing there. An add-on works because it completes a decision the customer has already made, not because it's a hard sell. Too many options at once cause hesitation. And timing matters: an add-on shown too early competes with the main purchase decision instead of following it.</p>
+        <p>I also audited the leading Shopify apps offering something similar, to see how they structured the setup flow and the storefront experience, and read outside the Shopify ecosystem entirely, into how add-ons function as an upsell tactic in retail generally. A few ideas kept surfacing there:</p>
+        <ul>
+          <li>An add-on works because it completes a decision the customer has already made, not because it's a hard sell.</li>
+          <li>Too many options at once cause hesitation.</li>
+          <li>Timing matters: an add-on shown too early competes with the main purchase decision instead of following it.</li>
+        </ul>
       </div>
 
       <div class="frame frame--cover reveal">
@@ -262,8 +267,12 @@
 
       <div class="prose reveal">
         <h3>5. Testing with real merchants</h3>
-        <p>We ran usability tests with four merchants to understand how they thought about add-ons and where the experience needed work. Three problems came up.</p>
-        <p>After a customer clicked "add to cart," the popup made it look like the main product hadn't been added and needed to be added again. We fixed that. Customers also wanted to look closer at the add-on products themselves, so we added a link to each one. And some of the wording in the advanced settings wasn't clear about what each option actually did, so we rewrote it.</p>
+        <p>We ran usability tests with four merchants to understand how they thought about add-ons and where the experience needed work. Three problems came up:</p>
+        <ul>
+          <li>After a customer clicked "add to cart," the popup made it look like the main product hadn't been added and needed to be added again. We fixed that.</li>
+          <li>Customers wanted to look closer at the add-on products themselves, so we added a link to each one.</li>
+          <li>Some of the wording in the advanced settings wasn't clear about what each option actually did, so we rewrote it.</li>
+        </ul>
       </div>
 
       <div class="frame frame-annotated reveal" style="aspect-ratio: 1984 / 1010;">
@@ -354,9 +363,11 @@
       <div class="prose reveal">
         <h3>Validating the hypothesis</h3>
         <p>That was a strong hypothesis, but still just a hypothesis, so I checked it three separate ways before trusting it.</p>
-        <p>First, the data. If the trigger/action model was really the better fit, most Buy X Get Y offers should show a single X product paired with the option of multiple Y items, the same one-to-many shape the add-on was built around. In February 2025, over 80% of Buy X Get Y bundles matched that shape, and 77% of shops creating them had set only one X product.</p>
-        <p>Second, support. I reviewed 40 support threads and found that 27 described needs the existing add-on offer could already satisfy outright, things like buying a product and receiving a gift, or choosing a gift from a set. The rest needed only minor extensions, mainly around quantity thresholds and automatically adding gifts to the cart.</p>
-        <p>Third, merchants themselves. I interviewed three Shopify merchants doing over a million dollars a month in revenue, deliberately choosing people who weren't using our app so their answers wouldn't be shaped by the version we already offered. One used Buy X Get Y to pair an item with something that wasn't worth selling on its own, like steak and a sauce, and thought of it purely as an upsell. Another used it to move slow inventory and introduce products customers might not otherwise notice, and had never liked the pack framing. A third paired an expensive item with a cheap one and let the customer choose which cheap item they wanted, because people respond better when they have a choice. None of them had seen our principles document, but all three were describing it.</p>
+        <ul>
+          <li><strong>The data.</strong> If the trigger/action model was really the better fit, most Buy X Get Y offers should show a single X product paired with the option of multiple Y items, the same one-to-many shape the add-on was built around. In February 2025, over 80% of Buy X Get Y bundles matched that shape, and 77% of shops creating them had set only one X product.</li>
+          <li><strong>Support.</strong> I reviewed 40 support threads and found that 27 described needs the existing add-on offer could already satisfy outright, things like buying a product and receiving a gift, or choosing a gift from a set. The rest needed only minor extensions, mainly around quantity thresholds and automatically adding gifts to the cart.</li>
+          <li><strong>Merchants themselves.</strong> I interviewed three Shopify merchants doing over a million dollars a month in revenue, deliberately choosing people who weren't using our app so their answers wouldn't be shaped by the version we already offered. One used Buy X Get Y to pair an item with something that wasn't worth selling on its own, like steak and a sauce, and thought of it purely as an upsell. Another used it to move slow inventory and introduce products customers might not otherwise notice, and had never liked the pack framing. A third paired an expensive item with a cheap one and let the customer choose which cheap item they wanted, because people respond better when they have a choice. None of them had seen our principles document, but all three were describing it.</li>
+        </ul>
       </div>
 
       <div class="frame reveal" style="aspect-ratio: 1984 / 1322;">
