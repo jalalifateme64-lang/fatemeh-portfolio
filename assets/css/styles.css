@@ -301,9 +301,11 @@ header{
   color: var(--ink-soft);
   margin: 0;
   max-width: 56ch;
+  text-align: justify;
 }
 .hero-cta{
   display:flex;
+  justify-content: flex-start;
   gap: 14px;
   margin-top: 8px;
   flex-wrap: wrap;
