@@ -378,30 +378,18 @@
     <section class="section wrap">
       <div class="section-head reveal">
         <div>
-          <div class="section-label">Key decisions</div>
-          <h2 class="section-title">TODO — the calls that mattered</h2>
-        </div>
-      </div>
-
-      <div class="prose reveal">
-        <p><span class="tag">TODO draft</span> TODO — describe the challenge behind the key decision.</p>
-        <div class="callout callout--wide">
-          <p>TODO — the synthesis statement that captures the core decision, same role as the pull-quote in the other case study's Key decisions section.</p>
-        </div>
-        <p><span class="tag">TODO draft</span> TODO — describe the decision itself and why it was chosen.</p>
-      </div>
-    </section>
-
-    <section class="section wrap">
-      <div class="section-head reveal">
-        <div>
           <div class="section-label">Implementation</div>
           <h2 class="section-title">TODO — what I built</h2>
         </div>
       </div>
 
       <div class="prose reveal">
-        <p><span class="tag">TODO draft</span> What did the shipped design/feature actually look like or work like? Add screenshots here.</p>
+        <h3>Designing the test</h3>
+        <p>Because the evidence held up, we didn't need to build a new Buy X Get Y offer from scratch. We could offer the existing one through the add-on's trigger/action model instead of the pack model. After selecting the Buy X Get Y type, merchants landed on a template picker, and that's where I added a new Buy X Get Y template, still labeled in familiar Buy X Get Y language, that routed them straight into the add-on creation flow instead of the old pack-based one. Once there, they saw the add-on's flow, plus one new capability: forcing every Y item into the cart automatically once the customer added X. I grouped that option together with the existing add-on selection settings under a new "selection rules" section. The storefront itself stayed untouched, so the test isolated the one variable that mattered.</p>
+      </div>
+
+      <div class="frame reveal" style="aspect-ratio: 1984 / 1322;">
+        <img src="./assets/images/case-study-1-bxgy-template-test.webp" alt="Select Buy X Get Y template screen with a new &quot;Buy one, get addons&quot; template alongside the original &quot;Buy more, get free gift&quot; template, and the resulting storefront cart using the add-on's trigger/action flow" width="1984" height="1322" loading="lazy">
       </div>
     </section>
 
