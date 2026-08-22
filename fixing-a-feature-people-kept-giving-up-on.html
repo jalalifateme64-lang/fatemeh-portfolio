@@ -61,7 +61,7 @@
       </div>
 
       <div class="prose reveal">
-        <p>I work on a top-ranked bundling app on the Shopify App Store, offering six bundle types to meet different merchant needs. Volume Discount — one of these six types — is designed for merchants who sell wholesale or want to encourage larger purchases: it lets them set discounts that increase with quantity (e.g., "Buy 3, save 10%; Buy 5, save 20%") on one or more products. It was consistently our most-used bundle type.</p>
+        <p>I work on a top-ranked bundling app on the Shopify App Store, offering six bundle types to meet different merchant needs. Volume Discount, one of these six types, is designed for merchants who sell wholesale or want to encourage larger purchases: it lets them set discounts that increase with quantity (e.g., "Buy 3, save 10%; Buy 5, save 20%") on one or more products. It was consistently our most-used bundle type.</p>
       </div>
     </section>
 
@@ -74,7 +74,7 @@
       </div>
 
       <div class="prose reveal">
-        <p>Starting in mid-April 2024, Volume Discount's creation rate — the percentage of merchants who installed the app and went on to create at least one Volume Discount — began a steady decline. From a peak of <strong>~43%</strong>, it dropped to as low as <strong>~12%</strong> by mid-November, falling behind bundle types it had previously outperformed.</p>
+        <p>Starting in mid-April 2024, Volume Discount's creation rate, the percentage of merchants who installed the app and went on to create at least one Volume Discount, began a steady decline. From a peak of <strong>~43%</strong>, it dropped to as low as <strong>~12%</strong> by mid-November, falling behind bundle types it had previously outperformed.</p>
         <p>No single change explained the drop, which meant the problem was systemic rather than a broken step in the flow. My job was to find out why merchants were dropping off, and whether the fix was a UX problem, a technical one, or both.</p>
       </div>
 
@@ -106,8 +106,8 @@
         <h3>1. Auditing the current journey</h3>
         <p>I mapped out the entire path a merchant takes to create a Volume Discount, and found friction at nearly every step:</p>
         <ul>
-          <li><strong>Getting discovered.</strong> Volume Discount ranked 13th in App Store search results for "Volume Discount," and didn't appear on the first page at all for "Quantity Breaks" — a term many merchants search for instead.</li>
-          <li><strong>Choosing the type.</strong> On the "Select bundle type" page, Volume Discount was the only one of the three main types <em>without</em> a "Buy X get Y available" badge — the visual element that drew the most attention on the page. Despite this, it had a higher creation rate than the two badged types.</li>
+          <li><strong>Getting discovered.</strong> Volume Discount ranked 13th in App Store search results for "Volume Discount," and didn't appear on the first page at all for "Quantity Breaks," a term many merchants search for instead.</li>
+          <li><strong>Choosing the type.</strong> On the "Select bundle type" page, Volume Discount was the only one of the three main types <em>without</em> a "Buy X get Y available" badge, the visual element that drew the most attention on the page. Despite this, it had a higher creation rate than the two badged types.</li>
         </ul>
       </div>
 
@@ -128,7 +128,7 @@
         <ul>
           <li>No product preview image shown while building the offer</li>
           <li>No option to set a discount for a range of quantities (e.g., "5–10 items")</li>
-          <li>A custom product-selection experience — instead of Shopify's native selection modal — that made it hard to select multiple products or variants</li>
+          <li>A custom product-selection experience in place of Shopify's native selection modal, making it hard to select multiple products or variants</li>
         </ul>
       </div>
 
@@ -137,8 +137,8 @@
       </div>
 
       <div class="prose reveal">
-        <p><strong>Seeing the result.</strong> This is where I found the most important insight — a live preview only appeared <em>after</em> a merchant had already selected products and set a discount. Merchants couldn't see what their Volume Discount would actually look like until it was nearly done.</p>
-        <p><strong>Storefront design.</strong> Both the horizontal and vertical widget layouts felt unfinished — inconsistent spacing, no product imagery in some states, and a generic visual style that didn't reflect the polish merchants would expect on their own storefront.</p>
+        <p><strong>Seeing the result.</strong> This is where I found the most important insight: a live preview only appeared <em>after</em> a merchant had already selected products and set a discount. Merchants couldn't see what their Volume Discount would actually look like until it was nearly done.</p>
+        <p><strong>Storefront design.</strong> Both the horizontal and vertical widget layouts felt unfinished: inconsistent spacing, no product imagery in some states, and a generic visual style that didn't reflect the polish merchants would expect on their own storefront.</p>
       </div>
 
       <div class="frame frame--cover reveal">
@@ -147,7 +147,7 @@
 
       <div class="prose reveal">
         <h3>2. Watching merchants in screen recordings</h3>
-        <p>I reviewed roughly 30–40 screen recordings of merchants who attempted to create a Volume Discount and didn't finish. This confirmed the "seeing the result" gap was a real, common problem, not just a hypothesis — the majority of these merchants got stuck or dropped off specifically at the preview stage. A recurring pattern emerged: merchants would go through the full creation flow, only see the actual preview <em>after</em> saving, realize it wasn't the discount type they wanted — and delete it. The bundle type they'd chosen didn't match the outcome they expected, and they only discovered this after the fact.</p>
+        <p>I reviewed roughly 30–40 screen recordings of merchants who attempted to create a Volume Discount and didn't finish. This confirmed the "seeing the result" gap was a real, common problem, not just a hypothesis: the majority of these merchants got stuck or dropped off specifically at the preview stage. A recurring pattern emerged: merchants would go through the full creation flow, only see the actual preview <em>after</em> saving, realize it wasn't the discount type they wanted, and delete it. The bundle type they'd chosen didn't match the outcome they expected, and they only discovered this after the fact.</p>
       </div>
 
       <div class="prose reveal">
@@ -168,7 +168,7 @@
           <tbody>
             <tr>
               <td data-label="App"><span class="compare-app">Kaching Bundles</span></td>
-              <td data-label="Key takeaway">Led with the visual outcome — a template gallery of nine fully-rendered options labeled by <em>use case</em>, not structure. Built-in A/B testing updated a live, styled preview beside the toggle.</td>
+              <td data-label="Key takeaway">Led with the visual outcome: a template gallery of nine fully-rendered options labeled by <em>use case</em>, not structure. Built-in A/B testing updated a live, styled preview beside the toggle.</td>
               <td data-label="Relevant to">Abstract type presentation</td>
               <td data-label="Screenshots">
                 <button class="compare-thumb" type="button" data-gallery="kaching" aria-haspopup="dialog" aria-label="View 2 Kaching Bundles screenshots">
@@ -181,7 +181,7 @@
             </tr>
             <tr>
               <td data-label="App"><span class="compare-app">Pumper</span></td>
-              <td data-label="Key takeaway">Offered full variations of the same offer — different layouts (vertical/horizontal) and different visual elements enabled per variation, not just color changes.</td>
+              <td data-label="Key takeaway">Offered full variations of the same offer: different layouts (vertical/horizontal) and different visual elements enabled per variation, not just color changes.</td>
               <td data-label="Relevant to">Storefront design gaps</td>
               <td data-label="Screenshots">
                 <button class="compare-thumb" type="button" data-gallery="pumper" aria-haspopup="dialog" aria-label="View 2 Pumper screenshots">
@@ -194,7 +194,7 @@
             </tr>
             <tr>
               <td data-label="App"><span class="compare-app">Upsell Koala Bundles</span></td>
-              <td data-label="Key takeaway">Separated customization into theme, layout, and fine-grained tokens, with a live product-page preview beside every control — no separate save-and-check step.</td>
+              <td data-label="Key takeaway">Separated customization into theme, layout, and fine-grained tokens, with a live product-page preview beside every control and no separate save-and-check step.</td>
               <td data-label="Relevant to">Delayed preview</td>
               <td data-label="Screenshots">
                 <button class="compare-thumb" type="button" data-gallery="koala" aria-haspopup="dialog" aria-label="View 2 Upsell Koala Bundles screenshots">
@@ -285,7 +285,7 @@
 
       <div class="prose reveal">
         <h3>4. Listening to customer-facing teams</h3>
-        <p>Our Customer Success and Support teams — who talk to merchants directly — surfaced recurring, specific requests:</p>
+        <p>Our Customer Success and Support teams, who talk to merchants directly, surfaced recurring, specific requests:</p>
         <ul>
           <li>Showing unit price per option</li>
           <li>Supporting quantity ranges rather than fixed thresholds</li>
@@ -305,7 +305,7 @@
           <li>Flexible discount definitions (quantity ranges, gaps between thresholds)</li>
           <li>Upsell opportunities within discount offers</li>
         </ul>
-        <p>This synthesis made it clear that the improvements we needed weren't isolated fixes — they spanned visual design, information architecture, and the underlying flexibility of the discount logic. That's what shaped the direction of the solution: rather than patching individual screens, we needed a more fundamental structural change.</p>
+        <p>This synthesis made it clear that the improvements we needed weren't isolated fixes: they spanned visual design, information architecture, and the underlying flexibility of the discount logic. That's what shaped the direction of the solution: rather than patching individual screens, we needed a more fundamental structural change.</p>
       </div>
     </section>
 
@@ -320,14 +320,14 @@
       <div class="prose reveal">
         <p>Two separate problems pointed toward the same solution:</p>
         <ul>
-          <li><strong>The UX problem.</strong> Our competitor research showed that merchants needed to see something close to the <em>final outcome</em> early — not configure abstract settings first. Fixing this properly meant more than adding a badge or reordering a page; it meant giving merchants a way to start from a visual, ready-made starting point.</li>
-          <li><strong>The technical problem.</strong> Separately, our engineering team had a long-standing, growing concern that applied across the entire app: every new feature added to <em>any</em> bundle type raised <strong>backward compatibility</strong> issues for merchants who had joined before that feature existed — especially those with custom code on their widgets. Without any version handling, maintaining backward compatibility got harder with every release, and the codebase became more complex and riskier to ship, regardless of which bundle type it touched.</li>
+          <li><strong>The UX problem.</strong> Our competitor research showed that merchants needed to see something close to the <em>final outcome</em> early, not configure abstract settings first. Fixing this properly meant more than adding a badge or reordering a page; it meant giving merchants a way to start from a visual, ready-made starting point.</li>
+          <li><strong>The technical problem.</strong> Separately, our engineering team had a long-standing, growing concern that applied across the entire app: every new feature added to <em>any</em> bundle type raised <strong>backward compatibility</strong> issues for merchants who had joined before that feature existed, especially those with custom code on their widgets. Without any version handling, maintaining backward compatibility got harder with every release, and the codebase became more complex and riskier to ship, regardless of which bundle type it touched.</li>
         </ul>
         <div class="callout callout--wide">
           <p>Both problems shared a root cause: we had no structural way to introduce a new experience without breaking backward compatibility for existing merchants.</p>
         </div>
-        <p>A template system — separating <em>logic</em> from <em>UI</em>, and versioning each visual/functional combination — would solve the UX problem we'd found in Volume Discount and the backward compatibility problem across the whole app, at the same time.</p>
-        <p>We chose to pilot this system on Volume Discount specifically for two reasons: it was our <strong>highest-usage bundle type</strong>, so improving it would have the biggest possible impact, and it had the <strong>simplest structure</strong> — built around a single product, rather than multiple products or collections — which made it the fastest and lowest-risk way to validate the approach before rolling it out across the other five types.</p>
+        <p>A template system, separating <em>logic</em> from <em>UI</em> and versioning each visual/functional combination, would solve the UX problem we'd found in Volume Discount and the backward compatibility problem across the whole app, at the same time.</p>
+        <p>We chose to pilot this system on Volume Discount specifically for two reasons: it was our <strong>highest-usage bundle type</strong>, so improving it would have the biggest possible impact, and it had the <strong>simplest structure</strong>, built around a single product rather than multiple products or collections, which made it the fastest and lowest-risk way to validate the approach before rolling it out across the other five types.</p>
       </div>
     </section>
 
@@ -340,12 +340,12 @@
       </div>
 
       <div class="prose reveal">
-        <p><strong>The core idea.</strong> Since backward compatibility was fundamentally a technical constraint, I brought the problem to engineering before designing a solution. Their guidance: every existing version of a bundle's design and logic had to stay untouched for merchants already using it — new features could only reach new merchants, or existing merchants who chose to migrate. This led to the core idea: separate a bundle's logic from its UI, and treat each combination as a distinct, versioned unit — so a design change creates a new version instead of overwriting the old one.</p>
+        <p><strong>The core idea.</strong> Since backward compatibility was fundamentally a technical constraint, I brought the problem to engineering before designing a solution. Their guidance: every existing version of a bundle's design and logic had to stay untouched for merchants already using it, so new features could only reach new merchants, or existing merchants who chose to migrate. This led to the core idea: separate a bundle's logic from its UI, and treat each combination as a distinct, versioned unit, so a design change creates a new version instead of overwriting the old one.</p>
         <p><strong>A three-layer structure.</strong> I translated that into three layers, each with a distinct reason for existing:</p>
         <ul>
-          <li><strong>Design</strong> — the layout itself, the only layer allowed to represent a major visual difference (vertical vs. horizontal), since each layout came with its own technical constraints.</li>
-          <li><strong>Design Variant</strong> — new, optional settings within a Design, so merchants who didn't need a new option weren't affected by it. This came directly from merchant requests for different option combinations within the same layout.</li>
-          <li><strong>Template</strong> — a Design Variant plus a set of default values (thresholds, option settings), letting one Variant support multiple ready-made starting points.</li>
+          <li><strong>Design.</strong> The layout itself, the only layer allowed to represent a major visual difference (vertical vs. horizontal), since each layout came with its own technical constraints.</li>
+          <li><strong>Design Variant.</strong> New, optional settings within a Design, so merchants who didn't need a new option weren't affected by it. This came directly from merchant requests for different option combinations within the same layout.</li>
+          <li><strong>Template.</strong> A Design Variant plus a set of default values (thresholds, option settings), letting one Variant support multiple ready-made starting points.</li>
         </ul>
       </div>
 
@@ -370,7 +370,7 @@
       </div>
 
       <div class="prose reveal">
-        <p>I considered fewer or more layers, but three matched what merchants actually needed — merchant feedback showed real, option-level needs that justified keeping Design Variant separate, while a fourth layer would have added flexibility we had no evidence merchants needed.</p>
+        <p>I considered fewer or more layers, but three matched what merchants actually needed: merchant feedback showed real, option-level needs that justified keeping Design Variant separate, while a fourth layer would have added flexibility we had no evidence merchants needed.</p>
       </div>
 
       <div class="frame frame--cover reveal">
@@ -386,7 +386,7 @@
       <div class="section-head reveal">
         <div>
           <div class="section-label">Result</div>
-          <h2 class="section-title">Creation rate recovered — and kept more trials</h2>
+          <h2 class="section-title">Creation rate recovered and kept more trials</h2>
         </div>
       </div>
 
@@ -406,7 +406,7 @@
 
       <div class="prose reveal">
         <p>The new Template structure was first released to new merchants through an A/B test. I monitored the creation rate for the active (new structure) and inactive (old structure) groups separately, and once the difference became statistically significant, we rolled it out to all merchants.</p>
-        <p>After the full release, Volume Discount's creation rate rose from its low point of ~12% to <strong>27%</strong> — more than doubling, and recovering well above where it had been before the decline started.</p>
+        <p>After the full release, Volume Discount's creation rate rose from its low point of ~12% to <strong>27%</strong>, more than doubling, and recovering well above where it had been before the decline started.</p>
       </div>
 
       <div class="frame frame--cover reveal">
@@ -415,11 +415,11 @@
 
       <div class="result-block reveal">
         <div class="callout callout--wide">
-          <p>"The redesign didn't just fix a UX problem — it removed a technical blocker that had been limiting the feature all along."</p>
+          <p>"The redesign didn't just fix a UX problem. It removed a technical blocker that had been limiting the feature all along."</p>
         </div>
 
         <div class="prose">
-          <p>The impact also extended beyond Volume Discount itself. <strong>Trial cancellation rate</strong> — the percentage of merchants who start a trial and cancel within that same trial period, out of all merchants who start a trial — <strong>decreased by 4%</strong>. Since Volume Discount was consistently our most-used bundle type, giving more merchants a smoother path to successfully creating one meant more of them experienced real value from the app during their trial — directly supporting a core business metric, not just a feature-level one.</p>
+          <p>The impact also extended beyond Volume Discount itself. <strong>Trial cancellation rate</strong>, the share of merchants who start a trial and cancel before it ends, <strong>decreased by 4%</strong>. Since Volume Discount was consistently our most-used bundle type, giving more merchants a smoother path to successfully creating one meant more of them experienced real value from the app during their trial, directly supporting a core business metric rather than just a feature-level one.</p>
         </div>
       </div>
     </section>
@@ -433,8 +433,8 @@
       </div>
 
       <div class="prose reveal">
-        <p>This project reinforced something I keep coming back to as a designer: the most effective fix isn't always the most visible one. The real unlock here wasn't a redesigned button or a new badge — it was a structural change that let both the UX and the underlying codebase evolve safely at the same time. Solving that gave us room to actually act on the visual and UX findings from research, instead of being constrained by backward-compatibility concerns every time we shipped something new.</p>
-        <p>We didn't roll the Template structure out to our other five bundle types right away — they had more complex structures than Volume Discount, and other priorities took precedence. We've since started applying the same approach to <strong>Mix and Match</strong>, and are currently evaluating the results.</p>
+        <p>This project reinforced something I keep coming back to as a designer: the most effective fix isn't always the most visible one. The real unlock here wasn't a redesigned button or a new badge. It was a structural change that let both the UX and the underlying codebase evolve safely at the same time. Solving that gave us room to actually act on the visual and UX findings from research, instead of being constrained by backward-compatibility concerns every time we shipped something new.</p>
+        <p>We didn't roll the Template structure out to our other five bundle types right away: they had more complex structures than Volume Discount, and other priorities took precedence. We've since started applying the same approach to <strong>Mix and Match</strong>, and are currently evaluating the results.</p>
       </div>
     </section>
 
